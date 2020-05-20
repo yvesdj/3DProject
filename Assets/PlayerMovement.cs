@@ -22,12 +22,14 @@ public class PlayerMovement : MonoBehaviour
     private bool _isJumping = false;
 
     private bool _isCrouching;
+    private float _originalHeight;
+    private float _crouchHeight = 0.5f;
     public Transform playerBody;
 
     // Start is called before the first frame update
     void Start()
     {
-        
+        _originalHeight = controller.height;   
     }
 
     // Update is called once per frame
@@ -36,8 +38,8 @@ public class PlayerMovement : MonoBehaviour
         CheckCollission();
 
         Movement();
-
         Jump();
+        Crouch();
     }
 
     public void CheckCollission()
@@ -92,7 +94,12 @@ public class PlayerMovement : MonoBehaviour
 
         if (_isCrouching)
         {
-
+            controller.height = _crouchHeight;
+        } else
+        {
+            controller.height = _originalHeight;
         }
     }
+
+
 }
