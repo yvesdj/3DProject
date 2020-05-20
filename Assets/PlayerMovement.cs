@@ -78,19 +78,21 @@ public class PlayerMovement : MonoBehaviour
         controller.Move(_velocity * Time.deltaTime);
     }
 
-    //public void Crouch()
-    //{
-    //    if (Input.GetKeyDown(KeyCode.C))
-    //    {
-    //        _isCrouching = true;
-    //    } else
-    //    {
-    //        _isCrouching = false;
-    //    }
+    public void Crouch()
+    {
+        if (Input.GetKeyDown(KeyCode.C))
+        {
+            _isCrouching = true;
+            print("crouch");
+        }
+        else
+        {
+            _isCrouching = false;
+        }
 
-    //    if (_isCrouching)
-    //    {
-            
-    //    }
-    //}
+        if (_isCrouching)
+        {
+
+        }
+    }
 }
