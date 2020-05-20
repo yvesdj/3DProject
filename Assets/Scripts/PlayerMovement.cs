@@ -5,6 +5,8 @@ using UnityEngine;
 public class PlayerMovement : MonoBehaviour
 {
     public CharacterController controller;
+    private float c_standardHeight;
+    private float c_crouchHeight = 0.5f;
 
     public float maxSpeed = 20f;
 
@@ -14,6 +16,7 @@ public class PlayerMovement : MonoBehaviour
     public Transform groundCheck;
     public float groundDistance = 0.4f;
     public LayerMask groundMask;
+    private float _gCYPos;
 
     private Vector3 _velocity;
     private bool _isGrounded;
@@ -23,11 +26,20 @@ public class PlayerMovement : MonoBehaviour
 
     private bool _isCrouching;
     public Transform playerBody;
+    private float p_standardHeight;
 
     // Start is called before the first frame update
     void Start()
     {
-        
+        c_standardHeight = controller.height;
+
+        Vector3 playerDimensions = playerBody.transform.localScale;
+        p_standardHeight = playerDimensions.y;
+
+        _gCYPos = groundCheck.transform.localPosition.y;
+
+        print(playerDimensions);
+        print(p_standardHeight);
     }
 
     // Update is called once per frame
@@ -38,6 +50,8 @@ public class PlayerMovement : MonoBehaviour
         Movement();
 
         Jump();
+
+        Crouch();
     }
 
     public void CheckCollission()
@@ -78,19 +92,42 @@ public class PlayerMovement : MonoBehaviour
         controller.Move(_velocity * Time.deltaTime);
     }
 
-    //public void Crouch()
-    //{
-    //    if (Input.GetKeyDown(KeyCode.C))
-    //    {
-    //        _isCrouching = true;
-    //    } else
-    //    {
-    //        _isCrouching = false;
-    //    }
+    public void Crouch()
+    {
+        if (Input.GetKeyDown(KeyCode.C))
+        {
+            if (_isCrouching)
+            {
+                _isCrouching = false;
+            } else
+            {
+                _isCrouching = true;
+            }
+        }
 
-    //    if (_isCrouching)
-    //    {
+        
+
+        if (_isCrouching)
+        {
+            print("Crouch");
+            controller.height = c_crouchHeight;
+
+            playerBody.transform.localScale = ChangeHeight(playerBody.transform.localScale, p_standardHeight / 2);
+
             
-    //    }
-    //}
+            groundCheck.transform.localPosition = ChangeHeight(groundCheck.transform.localPosition, _gCYPos / 2);
+        }
+        else
+        {
+            controller.height = c_standardHeight;
+            playerBody.transform.localScale = ChangeHeight(playerBody.transform.localScale, p_standardHeight);
+
+            groundCheck.transform.localPosition = ChangeHeight(groundCheck.transform.localPosition, _gCYPos);
+        }
+    }
+
+    public Vector3 ChangeHeight(Vector3 v, float y)
+    {
+        return new Vector3(v.x, y, v.z);
+    }
 }
