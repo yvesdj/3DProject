@@ -1831,7 +1831,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh18782
+  m_Name: pb_Mesh14026
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -2260,6 +2260,8 @@ GameObject:
   - component: {fileID: 976070382}
   - component: {fileID: 976070384}
   - component: {fileID: 976070383}
+  - component: {fileID: 976070385}
+  - component: {fileID: 976070386}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -2300,12 +2302,11 @@ MonoBehaviour:
   maxSpeed: 20
   gravity: -9.81
   jumpHeight: 5
-  groundCheck: {fileID: 257254880}
-  groundDistance: 0.4
-  groundMask:
-    serializedVersion: 2
-    m_Bits: 256
+  collisionHandler: {fileID: 0}
+  velocity: {x: 0, y: 0, z: 0}
   currentVelocity: {x: 0, y: 0, z: 0}
+  isJumping: 0
+  crouchHandler: {fileID: 0}
   playerBody: {fileID: 1558272490}
 --- !u!143 &976070384
 CharacterController:
@@ -2325,6 +2326,40 @@ CharacterController:
   m_SkinWidth: 0.08
   m_MinMoveDistance: 0.001
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &976070385
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 976070381}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cd359910a73db9348a02c55c8ea3fc68, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  player: {fileID: 976070383}
+  groundCheck: {fileID: 257254880}
+  groundDistance: 0.4
+  groundMask:
+    serializedVersion: 2
+    m_Bits: 256
+  groundCheckYPos: 0
+  isGrounded: 0
+--- !u!114 &976070386
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 976070381}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 39f2894d0cb0b794ea0435302a7c3caa, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  player: {fileID: 976070383}
+  _isCrouching: 0
 --- !u!1 &1008347200
 GameObject:
   m_ObjectHideFlags: 0
