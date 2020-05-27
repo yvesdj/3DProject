@@ -9,9 +9,14 @@ namespace Assets.Scripts
 {
     public static class Utils
     {
-        public static Vector3 ChangeHeightFromVector3(Vector3 v, float y)
+        public static Vector3 ChangeYFromVector3(Vector3 v, float y)
         {
             return new Vector3(v.x, y, v.z);
         }
+
+        //public static Quaternion ChangeXFromRotation(Vector3 v, float x)
+        //{
+        //    return new Quaternion(x, v.y, v.z);
+        //}
     }
 }

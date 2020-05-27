@@ -11,7 +11,7 @@ public class Player : MonoBehaviour
     public Transform playerBody;
     public Transform playerCamera;
 
-    public float maxSpeed = 20f;
+    public float maxSpeed = 15f;
 
     public float gravity = -9.81f;
     public float jumpHeight = 3f;

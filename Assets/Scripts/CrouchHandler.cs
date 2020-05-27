@@ -66,21 +66,21 @@ public class CrouchHandler : MonoBehaviour
     private void Uncrouch()
     {
         player.controller.height = c_standardHeight;
-        player.playerBody.transform.localScale = Utils.ChangeHeightFromVector3(_playerDimensions, p_standardHeight);
+        player.playerBody.transform.localScale = Utils.ChangeYFromVector3(_playerDimensions, p_standardHeight);
 
-        player.collisionHandler.groundCheck.transform.localPosition = Utils.ChangeHeightFromVector3(_collisionDetectorPosition, player.collisionHandler.groundCheckYPos);
+        player.collisionHandler.groundCheck.transform.localPosition = Utils.ChangeYFromVector3(_collisionDetectorPosition, player.collisionHandler.groundCheckYPos);
 
-        player.playerCamera.transform.localPosition = Utils.ChangeHeightFromVector3(player.playerCamera.transform.localPosition, p_cameraHeight);
+        player.playerCamera.transform.localPosition = Utils.ChangeYFromVector3(player.playerCamera.transform.localPosition, p_cameraHeight);
     }
 
     private void Crouch()
     {
         player.controller.height = c_crouchHeight;
-        player.playerBody.transform.localScale = Utils.ChangeHeightFromVector3(_playerDimensions, p_crouchHeight);
+        player.playerBody.transform.localScale = Utils.ChangeYFromVector3(_playerDimensions, p_crouchHeight);
 
-        player.collisionHandler.groundCheck.transform.localPosition = Utils.ChangeHeightFromVector3(_collisionDetectorPosition, player.collisionHandler.groundCheckYPos / 2);
+        player.collisionHandler.groundCheck.transform.localPosition = Utils.ChangeYFromVector3(_collisionDetectorPosition, player.collisionHandler.groundCheckYPos / 2);
 
-        player.playerCamera.transform.localPosition = Utils.ChangeHeightFromVector3(player.playerCamera.transform.localPosition, 0.5f);
+        player.playerCamera.transform.localPosition = Utils.ChangeYFromVector3(player.playerCamera.transform.localPosition, 0.5f);
 
     }
 
