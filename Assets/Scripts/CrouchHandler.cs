@@ -31,22 +31,16 @@ public class CrouchHandler : MonoBehaviour
 
         _playerCameraPosition = player.playerCamera.transform.localPosition;
         p_cameraHeight = _playerCameraPosition.y;
-
-        print(p_standardHeight);
-        print(p_crouchHeight);
-        print(player.playerBody);
     }
 
     public void CheckCrouch()
     {
-        print(_playerDimensions);
-        //input
+        
+        
         if (Input.GetKeyDown(KeyCode.C))
         {
             _isCrouching = !_isCrouching;
         }
-
-        print(_isCrouching);
 
         DoCrouch();
     }
@@ -83,10 +77,4 @@ public class CrouchHandler : MonoBehaviour
         player.playerCamera.transform.localPosition = Utils.ChangeYFromVector3(player.playerCamera.transform.localPosition, 0.5f);
 
     }
-
-    //public Vector3 ChangeHeight(Vector3 v, float y)
-    //{
-    //    return new Vector3(v.x, y, v.z);
-    //}
-
 }

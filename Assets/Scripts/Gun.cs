@@ -29,13 +29,12 @@ public class Gun : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        animator.SetBool("isFiring", false);
         if (Input.GetButton("Fire1") && Time.time >= nextTimeToFire)
         {
             nextTimeToFire = Time.time + 1f / fireRate;
             Shoot();
-        }
-
-        animator.SetBool("isFiring", false);
+        } 
     }
 
     private void Shoot()
