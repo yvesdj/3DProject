@@ -14,7 +14,7 @@ public class Gun : MonoBehaviour
     public float range = 100f;
     public float fireRate = 10f;
 
-    public float impactForce = 30f;
+    public float impactForce = 100f;
 
     public Camera fpsCam;
     public ParticleSystem muzzleFlash;
@@ -75,14 +75,19 @@ public class Gun : MonoBehaviour
                 target.TakeDamage(damage);
             }
 
-            //phisic
+            //if rigidbody with fysics
             if (hit.rigidbody != null)
             {
-                hit.rigidbody.AddForce(hit.normal * impactForce);
+                hit.rigidbody.AddForce( -hit.normal * impactForce); 
             }
 
-            GameObject impact = Instantiate(impactEffect, hit.point, Quaternion.LookRotation(hit.normal));
-            Destroy(impact, 2f);
+            CreateImpact(hit);
         }
+    }
+
+    private void CreateImpact(RaycastHit hit)
+    {
+        GameObject impact = Instantiate(impactEffect, hit.point, Quaternion.LookRotation(hit.normal));
+        Destroy(impact, 2f);
     }
 }
