@@ -15,6 +15,8 @@ public class CrouchHandler : MonoBehaviour
 
     private float p_standardHeight;
     private float p_crouchHeight;
+    private float p_standardSpeed;
+    private float p_crouchSpeed;
 
     //public Transform playerBody;
     private bool _isCrouching;
@@ -25,6 +27,8 @@ public class CrouchHandler : MonoBehaviour
 
         _playerDimensions = player.playerBody.transform.localScale;
         p_standardHeight = _playerDimensions.y;
+        p_standardSpeed = player.maxSpeed;
+        p_crouchSpeed = p_standardSpeed / 2;
         p_crouchHeight = p_standardHeight / 2;
 
         _collisionDetectorPosition = player.collisionHandler.groundCheck.transform.localPosition;
@@ -35,8 +39,6 @@ public class CrouchHandler : MonoBehaviour
 
     public void CheckCrouch()
     {
-        
-        
         if (Input.GetKeyDown(KeyCode.C))
         {
             _isCrouching = !_isCrouching;
@@ -50,10 +52,12 @@ public class CrouchHandler : MonoBehaviour
         if (_isCrouching)
         {
             Crouch();
+            player.maxSpeed = p_crouchSpeed;
         }
         else
         {
             Uncrouch();
+            player.maxSpeed = p_standardSpeed;
         }
     }
 

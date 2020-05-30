@@ -14,9 +14,6 @@ public class MouseLook : MonoBehaviour
 
     private float _xRotation = 0f;
 
-    //private float _sideRecoil;
-    //private float _upwardsRecoil;
-
     // Start is called before the first frame update
     void Start()
     {
@@ -27,7 +24,6 @@ public class MouseLook : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        //recoil needs solid
         _mouseX = _recoilHandler.sideRecoil + Input.GetAxis("Mouse X") * mouseSensitivity * Time.deltaTime;
         _mouseY = _recoilHandler.upwardsRecoil + Input.GetAxis("Mouse Y") * mouseSensitivity * Time.deltaTime;
 
