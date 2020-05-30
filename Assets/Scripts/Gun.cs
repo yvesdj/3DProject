@@ -7,8 +7,8 @@ using UnityEngine;
 public class Gun : MonoBehaviour
 {
     private AudioSource _audioSource;
-
     private Animator _animator;
+    private RecoilHandler _recoilHandler;
 
     public float damage = 10f;
     public float range = 100f;
@@ -22,7 +22,11 @@ public class Gun : MonoBehaviour
 
     private float nextTimeToFire = 0f;
 
-    // Start is called before the first frame update
+    private void Awake()
+    {
+        _recoilHandler = fpsCam.GetComponent<RecoilHandler>();
+    }
+
     void Start()
     {
         _animator = GetComponent<Animator>();
@@ -33,17 +37,25 @@ public class Gun : MonoBehaviour
     void Update()
     {
         _animator.SetBool("isFiring", false);
+        CheckInput();
+    }
+
+    private void CheckInput()
+    {
         if (Input.GetButton("Fire1") && Time.time >= nextTimeToFire)
         {
             nextTimeToFire = Time.time + 1f / fireRate;
             Shoot();
-        } 
+        }
     }
 
     private void Shoot()
     {
         muzzleFlash.Play();
         _audioSource.Play();
+
+        _recoilHandler.DoRecoil();
+
         _animator.SetBool("isFiring", true);
         CheckHit();
 
