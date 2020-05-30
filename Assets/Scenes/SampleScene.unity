@@ -7268,9 +7268,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 61d2d96f8a0aee74481371ce79a6f992, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  recoilSpeed: 0.5
-  _sideRecoil: 0
-  _upwardsRecoil: 0
+  sideRecoilForce: 0.25
+  upwardsRecoilForce: 1
+  sideRecoil: 0
+  upwardsRecoil: 0
 --- !u!1 &964014144
 GameObject:
   m_ObjectHideFlags: 0

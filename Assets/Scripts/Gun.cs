@@ -54,7 +54,7 @@ public class Gun : MonoBehaviour
         muzzleFlash.Play();
         _audioSource.Play();
 
-        _recoilHandler.DoRecoil();
+        _recoilHandler.SetRecoil();
 
         _animator.SetBool("isFiring", true);
         CheckHit();

@@ -4,19 +4,21 @@ using UnityEngine;
 
 public class RecoilHandler : MonoBehaviour
 {
-    private MouseLook _mouseLook;
+    public float sideRecoilForce;
+    public float upwardsRecoilForce;
 
     public float sideRecoil;
     public float upwardsRecoil;
 
-    private void Awake()
+    public void ResetRecoil()
     {
-        _mouseLook = GetComponent<MouseLook>();
+        sideRecoil = 0;
+        upwardsRecoil = 0;
     }
 
-    public void DoRecoil()
+    public void SetRecoil()
     {
-        _mouseLook.RecoilBack(upwardsRecoil, sideRecoil);
-        Debug.Log("Recoil");
+        upwardsRecoil += upwardsRecoilForce;
+        sideRecoil += sideRecoilForce;
     }
 }
