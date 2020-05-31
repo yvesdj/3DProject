@@ -20,6 +20,8 @@ public class Gun : MonoBehaviour
     public ParticleSystem muzzleFlash;
     public GameObject impactEffect;
 
+    public LineRenderer bulletTrail;
+
     private float nextTimeToFire = 0f;
 
     private void Awake()
@@ -57,8 +59,8 @@ public class Gun : MonoBehaviour
         _recoilHandler.SetRecoil();
 
         _animator.SetBool("isFiring", true);
-        CheckHit();
 
+        CheckHit();
     }
 
     private void CheckHit()
@@ -81,6 +83,8 @@ public class Gun : MonoBehaviour
                 hit.rigidbody.AddForce( -hit.normal * impactForce); 
             }
 
+            CreateBulletTrail(hit);
+
             CreateImpact(hit);
         }
     }
@@ -89,5 +93,24 @@ public class Gun : MonoBehaviour
     {
         GameObject impact = Instantiate(impactEffect, hit.point, Quaternion.LookRotation(hit.normal));
         Destroy(impact, 2f);
+    }
+
+    private void CreateBulletTrail(RaycastHit hit)
+    {
+        GameObject bulletTrailEffect = Instantiate(bulletTrail.gameObject, muzzleFlash.transform.localPosition, Quaternion.identity);
+
+        LineRenderer lineRenderer = bulletTrailEffect.GetComponent<LineRenderer>();
+
+        lineRenderer.SetPosition(0, muzzleFlash.transform.position);
+        if (hit.point != null)
+        {
+            lineRenderer.SetPosition(1, hit.point);
+        } else
+        {
+            //Render when shooting at nothing
+            //lineRenderer.SetPosition(1, );
+        }
+
+        Destroy(bulletTrailEffect, 1f);
     }
 }

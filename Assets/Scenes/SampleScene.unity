@@ -2168,7 +2168,7 @@ ParticleSystem:
       maxColor: {r: 1, g: 1, b: 1, a: 1}
       maxGradient:
         serializedVersion: 2
-        key0: {r: 1, g: 0.75230426, b: 0.2783019, a: 0}
+        key0: {r: 0.27843142, g: 0.9086654, b: 1, a: 0}
         key1: {r: 1, g: 0.75294125, b: 0.2784314, a: 1}
         key2: {r: 0, g: 0, b: 0, a: 1}
         key3: {r: 0, g: 0, b: 0, a: 0}
@@ -5890,7 +5890,7 @@ Light:
   serializedVersion: 10
   m_Type: 2
   m_Shape: 0
-  m_Color: {r: 1, g: 0.77220976, b: 0.3066038, a: 1}
+  m_Color: {r: 0.45490196, g: 0.9909814, b: 1, a: 1}
   m_Intensity: 1
   m_Range: 5
   m_SpotAngle: 30
@@ -25999,6 +25999,8 @@ MonoBehaviour:
   fpsCam: {fileID: 963194227}
   muzzleFlash: {fileID: 80309919}
   impactEffect: {fileID: 100002, guid: 3b1513bcb86426b4795879be6a128ed7, type: 3}
+  bulletTrail: {fileID: 120648884187509030, guid: d2ec70c814159504cb3e12e99b00b151,
+    type: 3}
 --- !u!82 &1132370558
 AudioSource:
   m_ObjectHideFlags: 0
