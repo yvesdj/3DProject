@@ -7522,7 +7522,6 @@ GameObject:
   - component: {fileID: 976070383}
   - component: {fileID: 976070385}
   - component: {fileID: 976070386}
-  - component: {fileID: 976070387}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -7622,18 +7621,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 976070383}
---- !u!122 &976070387
-Halo:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 976070381}
-  m_Enabled: 1
-  m_Color:
-    serializedVersion: 2
-    rgba: 4278190335
-  m_Size: 2
 --- !u!1 &1008347200
 GameObject:
   m_ObjectHideFlags: 0
