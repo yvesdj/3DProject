@@ -44,11 +44,15 @@ public class Gun : MonoBehaviour
 
     private void CheckInput()
     {
-        if (Input.GetButton("Fire1") && Time.time >= nextTimeToFire)
+        if (!PauseMenu.gameIsPaused)
         {
-            nextTimeToFire = Time.time + 1f / fireRate;
-            Shoot();
+            if (Input.GetButton("Fire1") && Time.time >= nextTimeToFire)
+            {
+                nextTimeToFire = Time.time + 1f / fireRate;
+                Shoot();
+            }
         }
+        
     }
 
     private void Shoot()

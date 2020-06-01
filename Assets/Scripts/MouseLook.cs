@@ -17,13 +17,15 @@ public class MouseLook : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        Cursor.lockState = CursorLockMode.Locked;
         _recoilHandler = GetComponent<RecoilHandler>();
     }
+
+   
 
     // Update is called once per frame
     void Update()
     {
+        CheckGameState();
         _mouseX = _recoilHandler.sideRecoil + Input.GetAxis("Mouse X") * mouseSensitivity * Time.deltaTime;
         _mouseY = _recoilHandler.upwardsRecoil + Input.GetAxis("Mouse Y") * mouseSensitivity * Time.deltaTime;
 
@@ -34,5 +36,19 @@ public class MouseLook : MonoBehaviour
 
         transform.localRotation = Quaternion.Euler(_xRotation, 0f, 0f);
         playerBody.Rotate(Vector3.up * _mouseX);
+    }
+
+    private static void CheckGameState()
+    {
+        if (PauseMenu.gameIsPaused)
+        {
+            Cursor.lockState = CursorLockMode.None;
+            Cursor.visible = true;
+        }
+        else
+        {
+            Cursor.lockState = CursorLockMode.Locked;
+            Cursor.visible = false;
+        }
     }
 }
