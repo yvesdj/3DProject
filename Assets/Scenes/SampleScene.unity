@@ -6279,6 +6279,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   target: {fileID: 976070381}
   muzzleFlash: {fileID: 0}
+  maxEngageRange: 0
+  fireRate: 5
 --- !u!43 &547397544
 Mesh:
   m_ObjectHideFlags: 0
@@ -105286,3 +105288,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   target: {fileID: 976070381}
   muzzleFlash: {fileID: 1434342436}
+  maxEngageRange: 25
+  fireRate: 5
