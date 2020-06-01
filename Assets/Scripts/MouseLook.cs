@@ -40,15 +40,15 @@ public class MouseLook : MonoBehaviour
 
     private static void CheckGameState()
     {
-        if (PauseMenu.gameIsPaused)
-        {
-            Cursor.lockState = CursorLockMode.None;
-            Cursor.visible = true;
-        }
-        else
+        if (!PauseMenu.gameIsPaused)
         {
             Cursor.lockState = CursorLockMode.Locked;
             Cursor.visible = false;
+        }
+        else
+        {
+            Cursor.lockState = CursorLockMode.None;
+            Cursor.visible = true;
         }
     }
 }
