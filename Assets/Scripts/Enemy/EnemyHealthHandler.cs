@@ -28,7 +28,11 @@ public class EnemyHealthHandler : MonoBehaviour, IHealthHandler
     public void TakeDamage(float amount)
     {
         CurrentHealth -= amount;
-        healthBar.UpdateBar(CurrentHealth, MaxHealth);
+        if (healthBar != null)
+        {
+            healthBar.UpdateBar(CurrentHealth, MaxHealth);
+        }
+        
         if (CurrentHealth <= 0f)
         {
             Die();
