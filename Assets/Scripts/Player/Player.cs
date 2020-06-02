@@ -4,6 +4,9 @@ using UnityEngine;
 
 public class Player : MonoBehaviour
 {
+    public IHealthHandler healthHandler;
+    public float health;
+
     public CharacterController controller;
     public CrouchHandler crouchHandler;
     public CollisionHandler collisionHandler;
@@ -25,6 +28,9 @@ public class Player : MonoBehaviour
 
     private void Awake()
     {
+        healthHandler = GetComponent<IHealthHandler>();
+        healthHandler.Health = health;
+
         collisionHandler = GetComponent<CollisionHandler>();
         crouchHandler = GetComponent<CrouchHandler>();
     }

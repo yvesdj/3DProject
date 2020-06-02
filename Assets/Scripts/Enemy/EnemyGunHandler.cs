@@ -5,12 +5,15 @@ using UnityEngine;
 public class EnemyGunHandler : MonoBehaviour
 {
     public GameObject target;
+
+
     private AudioSource _audioSource;
     public ParticleSystem muzzleFlash;
     public GameObject impactEffect;
     public LineRenderer bulletTrail;
 
     public float maxEngageRange;
+    public float damage = 10f;
 
     public float fireRate = 5f;
     private float _nextTimeToFire = 0f;
@@ -87,12 +90,16 @@ public class EnemyGunHandler : MonoBehaviour
         if (Physics.Raycast(muzzleFlash.transform.position, direction, out shotHit, maxEngageRange))
         {
             Debug.Log(shotHit.transform.name);
-
-            EnemyHealthHandler target = shotHit.transform.GetComponent<EnemyHealthHandler>();
-
             CreateBulletTrail(shotHit);
 
             CreateImpact(shotHit);
+
+            IHealthHandler target = shotHit.transform.parent.GetComponent<IHealthHandler>();
+
+            if (target != null)
+            {
+                target.TakeDamage(damage);
+            }  
         }
     }
 

@@ -12,26 +12,23 @@ public class EnemyHealthHandler : MonoBehaviour, IHealthHandler
         get { return _health; }
         set { _health = value; }
     }
-
-
-
-
-    // Start is called before the first frame update
-    void Start()
-    {
+    
+    //// Start is called before the first frame update
+    //void Start()
+    //{
         
-    }
+    //}
 
-    // Update is called once per frame
-    void Update()
-    {
+    //// Update is called once per frame
+    //void Update()
+    //{
         
-    }
+    //}
 
     public void TakeDamage(float amount)
     {
-        Health -= amount;
-        if (Health <= 0f)
+        _health -= amount;
+        if (_health <= 0f)
         {
             Die();
         }
