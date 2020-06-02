@@ -3,11 +3,18 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Target : MonoBehaviour
+public class EnemyHealthHandler : MonoBehaviour, IHealthHandler
 {
-    public float health = 50f;
+    private float _health;
 
-    
+    public float Health
+    {
+        get { return _health; }
+        set { _health = value; }
+    }
+
+
+
 
     // Start is called before the first frame update
     void Start()
@@ -23,8 +30,8 @@ public class Target : MonoBehaviour
 
     public void TakeDamage(float amount)
     {
-        health -= amount;
-        if (health <= 0f)
+        Health -= amount;
+        if (Health <= 0f)
         {
             Die();
         }

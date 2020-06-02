@@ -11,11 +11,9 @@ public class EnemyGunHandler : MonoBehaviour
     public LineRenderer bulletTrail;
 
     public float maxEngageRange;
-    private bool isEngaging;
 
     public float fireRate = 5f;
     private float _nextTimeToFire = 0f;
-    //public float scatterAmount;
 
     public float scaleLimit = 2.0f;
     public float z = 10f;
@@ -31,15 +29,17 @@ public class EnemyGunHandler : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        isEngaging = IsInRange();
+        //isEngaging = IsInRange();
 
-        if (isEngaging)
+        if (IsInRange())
         {
             transform.LookAt(target.transform);
-            
-            Shoot();
         }
 
+        if (IsLineOfSight())
+        {
+            Shoot();
+        }
     }
 
     private bool IsInRange()
@@ -60,58 +60,56 @@ public class EnemyGunHandler : MonoBehaviour
             _nextTimeToFire = Time.time + 1f / fireRate;
             muzzleFlash.Play();
             _audioSource.Play();
-            CheckHit();
+            GenerateScatteredShot();   
         }
-        
-        //_audioSource.Play();
-
-        //_recoilHandler.SetRecoil();
-
-        //_animator.SetBool("isFiring", true);
-
-        
     }
 
-    private void CheckHit()
+    private bool IsLineOfSight()
     {
-        //  Try this one first, before using the second one
-        //  The Ray-hits will form a ring
+        RaycastHit hit;
+        if (Physics.Raycast(muzzleFlash.transform.position, muzzleFlash.transform.forward, out hit, maxEngageRange) && hit.transform.name == "Body")
+        {
+            return true;
+        }
+        else
+        {
+            return false;
+        }
+    }
+
+    private void GenerateScatteredShot()
+    {
+        Vector3 direction = GenerateScatter();
+
+        direction = muzzleFlash.transform.TransformDirection(direction.normalized);
+
+        RaycastHit shotHit;
+        if (Physics.Raycast(muzzleFlash.transform.position, direction, out shotHit, maxEngageRange))
+        {
+            Debug.Log(shotHit.transform.name);
+
+            EnemyHealthHandler target = shotHit.transform.GetComponent<EnemyHealthHandler>();
+
+            CreateBulletTrail(shotHit);
+
+            CreateImpact(shotHit);
+        }
+    }
+
+    private Vector3 GenerateScatter()
+    {
         float randomRadius = scaleLimit;
-        //  The Ray-hits will be in a circular area
+
         randomRadius = Random.Range(0, scaleLimit);
 
         float randomAngle = Random.Range(0, 2 * Mathf.PI);
 
-        //Calculating the raycast direction
         Vector3 direction = new Vector3(
             randomRadius * Mathf.Cos(randomAngle),
             randomRadius * Mathf.Sin(randomAngle),
             z
         );
-
-        //Make the direction match the transform
-        //It is like converting the Vector3.forward to transform.forward
-        direction = muzzleFlash.transform.TransformDirection(direction.normalized);
-
-
-
-        RaycastHit hit;
-        if (Physics.Raycast(muzzleFlash.transform.position, direction, out hit, maxEngageRange))
-        {
-            Debug.Log(hit.transform.name);
-
-            Target target = hit.transform.GetComponent<Target>();
-
-            //if rigidbody with fysics
-            if (hit.rigidbody != null)
-            {
-                hit.rigidbody.AddForce(-hit.normal * impactForce);
-            }
-
-            CreateBulletTrail(hit);
-
-            CreateImpact(hit);
-        }
+        return direction;
     }
 
     private void CreateImpact(RaycastHit hit)

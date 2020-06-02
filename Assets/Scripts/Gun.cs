@@ -74,7 +74,7 @@ public class Gun : MonoBehaviour
         {
             Debug.Log(hit.transform.name);
 
-            Target target = hit.transform.GetComponent<Target>();
+            IHealthHandler target = hit.transform.GetComponent<IHealthHandler>();
 
             if (target != null)
             {
