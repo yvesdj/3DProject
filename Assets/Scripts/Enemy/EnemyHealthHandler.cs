@@ -5,6 +5,7 @@ using UnityEngine;
 
 public class EnemyHealthHandler : MonoBehaviour, IHealthHandler
 {
+    public SimpleHealthBar healthBar;
     public Enemy enemy;
 
     public float CurrentHealth { get; set; }
@@ -27,6 +28,7 @@ public class EnemyHealthHandler : MonoBehaviour, IHealthHandler
     public void TakeDamage(float amount)
     {
         CurrentHealth -= amount;
+        healthBar.UpdateBar(CurrentHealth, MaxHealth);
         if (CurrentHealth <= 0f)
         {
             Die();

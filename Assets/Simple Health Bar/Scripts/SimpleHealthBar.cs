@@ -128,7 +128,8 @@ public class SimpleHealthBar : MonoBehaviour
 		// Then just apply the target fill amount.
 		barImage.fillAmount = targetFill;
 
-		// Call the functions for the options.
+        // Call the functions for the options.
+        
 		UpdateOptions();
 	}
 

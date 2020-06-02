@@ -27,7 +27,7 @@ public class PlayerHealthHandler : MonoBehaviour, IHealthHandler
     {
         CurrentHealth -= amount;
         healthBar.UpdateBar(CurrentHealth, MaxHealth);
-        //Debug.Log(CurrentHealth);
+        Debug.Log(CurrentHealth);
 
         if (CurrentHealth <= 0f)
         {
