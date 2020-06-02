@@ -4,8 +4,8 @@ using UnityEngine;
 
 public class Player : MonoBehaviour
 {
-    public IHealthHandler healthHandler;
-    public float health;
+    //public IHealthHandler healthHandler;
+    public float maxHealth;
 
     public CharacterController controller;
     public CrouchHandler crouchHandler;
@@ -28,8 +28,8 @@ public class Player : MonoBehaviour
 
     private void Awake()
     {
-        healthHandler = GetComponent<IHealthHandler>();
-        healthHandler.Health = health;
+        //healthHandler = GetComponent<IHealthHandler>();
+        //healthHandler.CurrentHealth = maxHealth;
 
         collisionHandler = GetComponent<CollisionHandler>();
         crouchHandler = GetComponent<CrouchHandler>();

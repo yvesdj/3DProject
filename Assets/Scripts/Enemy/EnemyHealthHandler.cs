@@ -5,30 +5,29 @@ using UnityEngine;
 
 public class EnemyHealthHandler : MonoBehaviour, IHealthHandler
 {
-    private float _health;
+    public Enemy enemy;
 
-    public float Health
+    public float CurrentHealth { get; set; }
+    public float MaxHealth { get { return enemy.maxHealth; } set { MaxHealth = value; } }
+
+
+    // Start is called before the first frame update
+    void Start()
     {
-        get { return _health; }
-        set { _health = value; }
+        enemy = GetComponent<Enemy>();
+        CurrentHealth = MaxHealth;
     }
-    
-    //// Start is called before the first frame update
-    //void Start()
-    //{
-        
-    //}
 
     //// Update is called once per frame
     //void Update()
     //{
-        
+
     //}
 
     public void TakeDamage(float amount)
     {
-        _health -= amount;
-        if (_health <= 0f)
+        CurrentHealth -= amount;
+        if (CurrentHealth <= 0f)
         {
             Die();
         }

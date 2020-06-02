@@ -5,7 +5,17 @@ using UnityEngine;
 
 public class PlayerHealthHandler : MonoBehaviour, IHealthHandler
 {
-    public float Health { get; set; }
+    public SimpleHealthBar healthBar;
+    public Player player;
+
+    public float CurrentHealth { get; set; }
+    public float MaxHealth { get { return player.maxHealth; } set { MaxHealth = value; } }
+
+    void Start()
+    {
+        player = GetComponent<Player>();
+        CurrentHealth = MaxHealth;
+    }
 
     // Update is called once per frame
     void Update()
@@ -15,9 +25,14 @@ public class PlayerHealthHandler : MonoBehaviour, IHealthHandler
 
     public void TakeDamage(float amount)
     {
-        Health -= amount;
-        if (Health <= 0f)
+        CurrentHealth -= amount;
+        healthBar.UpdateBar(CurrentHealth, MaxHealth);
+        //Debug.Log(CurrentHealth);
+
+        if (CurrentHealth <= 0f)
         {
+            
+
             Die();
         }
     }
