@@ -13,7 +13,7 @@ public class DialogueManager : MonoBehaviour
     public Animator animator;
 
     private Queue<string> _sentences;
-    private bool _isConversating;
+    public bool isConversating;
 
     // Start is called before the first frame update
     void Start()
@@ -23,7 +23,7 @@ public class DialogueManager : MonoBehaviour
 
     void Update()
     {
-        if (_isConversating)
+        if (isConversating)
         {
             DisplayNextOnInput();
         }
@@ -43,7 +43,7 @@ public class DialogueManager : MonoBehaviour
             _sentences.Enqueue(sentence);
         }
 
-        _isConversating = true;
+        isConversating = true;
         DisplayNextSentence();
     }
 
@@ -81,7 +81,7 @@ public class DialogueManager : MonoBehaviour
     private void EndDialogue()
     {
         animator.SetBool("IsOpen", false);
-        _isConversating = false;
+        isConversating = false;
         Debug.Log("Ended conversation");
     }
 }

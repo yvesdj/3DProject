@@ -2,12 +2,18 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class DialogueTrigger : MonoBehaviour
+public class DialogueTrigger : MonoBehaviour, IEventTrigger
 {
     public Dialogue dialogue;
-    private bool _hasBeenTriggered = false;
+    //private bool _hasBeenTriggered = false;
+    public bool hasBeenTriggered { get; set; }
 
-    private void OnTriggerEnter(Collider other)
+    void Start()
+    {
+        hasBeenTriggered = false;
+    }
+
+    public void OnTriggerEnter(Collider other)
     {
         TriggerDialogue();
     }
@@ -15,10 +21,10 @@ public class DialogueTrigger : MonoBehaviour
 
     public void TriggerDialogue()
     {
-        if (_hasBeenTriggered == false)
+        if (hasBeenTriggered == false)
         {
             FindObjectOfType<DialogueManager>().StartDialogue(dialogue);
-            _hasBeenTriggered = true;
+            hasBeenTriggered = true;
         }
         else
         {
