@@ -74,11 +74,17 @@ public class Gun : MonoBehaviour
         {
             Debug.Log(hit.transform.name);
 
-            IHealthHandler target = hit.transform.GetComponent<IHealthHandler>();
+            IHealthHandler targetHealth = hit.transform.GetComponent<IHealthHandler>();
+            DialogueTrigger dialogueTrigger = hit.transform.GetComponent<DialogueTrigger>();
 
-            if (target != null)
+            if (targetHealth != null)
             {
-                target.TakeDamage(damage);
+                targetHealth.TakeDamage(damage);
+            }
+
+            if (dialogueTrigger != null)
+            {
+                dialogueTrigger.TriggerDialogue();
             }
 
             //if rigidbody with fysics
