@@ -11017,6 +11017,7 @@ GameObject:
   - component: {fileID: 368991944}
   - component: {fileID: 368991946}
   - component: {fileID: 368991945}
+  - component: {fileID: 368991947}
   m_Layer: 5
   m_Name: DialogueBox
   m_TagString: Untagged
@@ -11082,6 +11083,25 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 368991943}
   m_CullTransparentMesh: 0
+--- !u!95 &368991947
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 368991943}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: cdf10a38ca6400b449a6b446393e27bb, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &381224957
 GameObject:
   m_ObjectHideFlags: 0
@@ -117363,7 +117383,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 91d0ebcf63d8b444285c1611c30f2bc7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHealth: 50
+  maxHealth: 5000
 --- !u!114 &1973264633
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -117379,7 +117399,8 @@ MonoBehaviour:
   dialogue:
     name: Innocent Box
     sentences:
-    - Aha! I see that you have found a use for that gun of yours!
+    - Aha! I see that you have found a use for that gun of yours! You can find the
+      trigger in the gun script.
     - I know I'm a shooting target but could you treat me gently, please?
     - Or not....
 --- !u!1 &1986693324 stripped
@@ -117725,6 +117746,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8a6ef4ea4402ed04ba523ca05a18680d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  nameText: {fileID: 2061455690}
+  dialogueText: {fileID: 486828211}
+  animator: {fileID: 368991947}
 --- !u!4 &2096923437
 Transform:
   m_ObjectHideFlags: 0
