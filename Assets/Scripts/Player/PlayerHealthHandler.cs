@@ -32,8 +32,6 @@ public class PlayerHealthHandler : MonoBehaviour, IHealthHandler
 
         if (CurrentHealth <= 0f)
         {
-            
-
             Die();
         }
     }
@@ -42,6 +40,11 @@ public class PlayerHealthHandler : MonoBehaviour, IHealthHandler
     {
         Debug.Log("You die now");
         player.transform.position = respawnPoint.transform.position;
+        ResetHealth();
+    }
+
+    public void ResetHealth()
+    {
         CurrentHealth = MaxHealth;
         healthBar.UpdateBar(CurrentHealth, MaxHealth);
     }
