@@ -7,6 +7,7 @@ public class PlayerHealthHandler : MonoBehaviour, IHealthHandler
 {
     public SimpleHealthBar healthBar;
     public Player player;
+    public Transform respawnPoint;
 
     public float CurrentHealth { get; set; }
     public float MaxHealth { get { return player.maxHealth; } set { MaxHealth = value; } }
@@ -40,5 +41,8 @@ public class PlayerHealthHandler : MonoBehaviour, IHealthHandler
     private void Die()
     {
         Debug.Log("You die now");
+        player.transform.position = respawnPoint.transform.position;
+        CurrentHealth = MaxHealth;
+        healthBar.UpdateBar(CurrentHealth, MaxHealth);
     }
 }
