@@ -2,13 +2,19 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Pickup : MonoBehaviour, IEventTrigger
+public class PickupManager : MonoBehaviour, IEventTrigger
 {
+    private IPickup _pickup;
+
     public bool HasBeenTriggered { get; set; }
-    //public bool IsElapsed { get; set; }
 
     private float timer;
     public float respawnTime;
+
+    void Awake()
+    {
+        _pickup = GetComponent<IPickup>();
+    }
     
     // Start is called before the first frame update
     void Start()
@@ -38,12 +44,16 @@ public class Pickup : MonoBehaviour, IEventTrigger
     public void OnTriggerEnter(Collider other)
     {
         HasBeenTriggered = true;
-        EnhancePlayer(other);
-    }
 
-    private void EnhancePlayer(Collider player)
-    {
-        Debug.Log("Enhance player");
+        if (_pickup != null)
+        {
+            _pickup.EnhancePlayer(other);
+        }
+        else
+        {
+            Debug.Log("No effect chosen.");
+        }
+
         TogglePickupVisibility();
     }
 

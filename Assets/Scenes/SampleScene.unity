@@ -5817,6 +5817,7 @@ GameObject:
   - component: {fileID: 156957782}
   - component: {fileID: 156957781}
   - component: {fileID: 156957784}
+  - component: {fileID: 156957785}
   m_Layer: 0
   m_Name: HealthPickup
   m_TagString: Untagged
@@ -5907,10 +5908,23 @@ MonoBehaviour:
   m_GameObject: {fileID: 156957779}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9eb494cbb54b48c4499504d36fa96331, type: 3}
+  m_Script: {fileID: 11500000, guid: d4e7194005ec3224f9ace5b550d10581, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  respawnTime: 2
+  respawnTime: 5
+--- !u!114 &156957785
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 156957779}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0324815483817604d9335da7ea70503e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  healingAmount: 20
 --- !u!1 &209013318
 GameObject:
   m_ObjectHideFlags: 0
