@@ -4,12 +4,11 @@ using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
 {
-    private PlayerInput _playerInput;
-    private CrouchHandler _crouchHandler;
+    public PlayerInput _playerInput;
+    public CrouchHandler _crouchHandler;
     public CharacterController Controller { get; set; }
-    //private CharacterController Controller;
     public CollisionHandler CollisionHandler { get; set; }
-    //private CollisionHandler CollisionHandler;
+    
 
     public Vector3 currentVelocity;
     public float maxSpeed = 15f;
@@ -27,8 +26,15 @@ public class PlayerMovement : MonoBehaviour
         CollisionHandler = GetComponent<CollisionHandler>();
     }
 
-    // Update is called once per frame
-    void Update()
+    private void Update()
+    {
+        CollisionHandler.CheckCollission();
+        _crouchHandler.CheckCrouch();
+        Movement();
+        Jump();
+    }
+
+    public void Move()
     {
         CollisionHandler.CheckCollission();
         _crouchHandler.CheckCrouch();

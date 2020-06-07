@@ -12142,7 +12142,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh223384
+  m_Name: pb_Mesh92186
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -14296,17 +14296,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maxHealth: 100
-  controller: {fileID: 976070384}
-  crouchHandler: {fileID: 0}
-  collisionHandler: {fileID: 0}
   playerBody: {fileID: 1558272490}
   playerCamera: {fileID: 963194228}
-  maxSpeed: 8
-  gravity: -9.81
-  jumpHeight: 5
-  velocity: {x: 0, y: 0, z: 0}
-  currentVelocity: {x: 0, y: 0, z: 0}
-  isJumping: 0
 --- !u!143 &976070384
 CharacterController:
   m_ObjectHideFlags: 0
@@ -14337,7 +14328,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cd359910a73db9348a02c55c8ea3fc68, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player: {fileID: 976070383}
   groundCheck: {fileID: 257254880}
   groundDistance: 0.4
   groundMask:
@@ -14357,7 +14347,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 39f2894d0cb0b794ea0435302a7c3caa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player: {fileID: 976070383}
 --- !u!114 &976070387
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -14414,6 +14403,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ef86dc61550134d46819a3a53678e7fc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _playerInput: {fileID: 0}
+  _crouchHandler: {fileID: 0}
+  currentVelocity: {x: 0, y: 0, z: 0}
+  maxSpeed: 15
+  jumpVelocity: {x: 0, y: 0, z: 0}
+  isJumping: 0
+  gravity: -9.81
+  jumpHeight: 3
 --- !u!114 &976070390
 MonoBehaviour:
   m_ObjectHideFlags: 0

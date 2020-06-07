@@ -21,7 +21,6 @@ public class CrouchHandler : MonoBehaviour
     private float p_standardSpeed;
     private float p_crouchSpeed;
 
-    //public Transform playerBody;
     private bool _isCrouching;
 
     private void Awake()
@@ -29,7 +28,10 @@ public class CrouchHandler : MonoBehaviour
         _playerInput = GetComponent<PlayerInput>();
         _player = GetComponent<Player>();
         _playerMovement = GetComponent<PlayerMovement>();
+    }
 
+    private void Start()
+    {
         c_standardHeight = _playerMovement.Controller.height;
 
         _playerDimensions = _player.playerBody.transform.localScale;
