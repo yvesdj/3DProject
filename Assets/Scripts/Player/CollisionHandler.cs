@@ -27,13 +27,11 @@ public class CollisionHandler : MonoBehaviour
     {
         isGrounded = CheckGrounded();
 
-        if (isGrounded && _playerMovement.currentVelocity.y < 0)
+        if (isGrounded && _playerMovement.jumpVelocity.y < 0)
         {
-            _playerMovement.currentVelocity.y = -2f;
+            _playerMovement.jumpVelocity.y = -2f;
             _playerMovement.isJumping = false;
         }
-
-        Debug.Log(isGrounded);
     }
 
     private bool CheckGrounded()
