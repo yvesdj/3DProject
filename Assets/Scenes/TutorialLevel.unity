@@ -69313,9 +69313,12 @@ GameObject:
   - component: {fileID: 1914116296}
   - component: {fileID: 1914116295}
   - component: {fileID: 1914116294}
+  - component: {fileID: 1914116301}
+  - component: {fileID: 1914116300}
+  - component: {fileID: 1914116302}
   m_Layer: 0
   m_Name: Player
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -69348,7 +69351,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 39f2894d0cb0b794ea0435302a7c3caa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player: {fileID: 1914116297}
 --- !u!114 &1914116296
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -69361,7 +69363,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cd359910a73db9348a02c55c8ea3fc68, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player: {fileID: 1914116297}
   groundCheck: {fileID: 2111421870}
   groundDistance: 0.4
   groundMask:
@@ -69382,17 +69383,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maxHealth: 100
-  controller: {fileID: 1914116298}
-  crouchHandler: {fileID: 1914116295}
-  collisionHandler: {fileID: 1914116296}
   playerBody: {fileID: 977543264}
   playerCamera: {fileID: 278221191}
-  maxSpeed: 8
-  gravity: -9.81
-  jumpHeight: 5
-  velocity: {x: 0, y: 0, z: 0}
-  currentVelocity: {x: 0, y: 0, z: 0}
-  isJumping: 0
 --- !u!143 &1914116298
 CharacterController:
   m_ObjectHideFlags: 0
@@ -69429,6 +69421,55 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: -180.00002, z: 0}
+--- !u!114 &1914116300
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1914116293}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ef86dc61550134d46819a3a53678e7fc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _playerInput: {fileID: 0}
+  _crouchHandler: {fileID: 0}
+  currentVelocity: {x: 0, y: 0, z: 0}
+  normalSpeed: 15
+  sprintSpeed: 20
+  jumpVelocity: {x: 0, y: 0, z: 0}
+  isJumping: 0
+  gravity: -9.81
+  jumpHeight: 3
+--- !u!114 &1914116301
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1914116293}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ec22e4368b9f136489dc8219e2f55ebd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1914116302
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1914116293}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 675a2e107c7a109409a34581b3c49e6e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  hitClips: []
+  dieClips: []
+  audioSource: {fileID: 0}
+  audioListener: {fileID: 0}
 --- !u!1 &1920024082
 GameObject:
   m_ObjectHideFlags: 0

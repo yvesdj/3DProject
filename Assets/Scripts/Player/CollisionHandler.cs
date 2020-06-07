@@ -32,8 +32,6 @@ public class CollisionHandler : MonoBehaviour
             _playerMovement.currentVelocity.y = -2f;
             _playerMovement.isJumping = false;
         }
-
-        Debug.Log(isGrounded);
     }
 
     private bool CheckGrounded()
