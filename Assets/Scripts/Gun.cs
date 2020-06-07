@@ -9,6 +9,7 @@ public class Gun : MonoBehaviour
     private AudioSource _audioSource;
     private Animator _animator;
     private RecoilHandler _recoilHandler;
+    private PlayerInput _playerInput;
 
     public float damage = 10f;
     public float range = 100f;
@@ -27,12 +28,9 @@ public class Gun : MonoBehaviour
     private void Awake()
     {
         _recoilHandler = fpsCam.GetComponent<RecoilHandler>();
-    }
-
-    void Start()
-    {
         _animator = GetComponent<Animator>();
         _audioSource = GetComponent<AudioSource>();
+        _playerInput = GetComponentInParent<PlayerInput>();
     }
 
     // Update is called once per frame
@@ -46,7 +44,7 @@ public class Gun : MonoBehaviour
     {
         if (!PauseMenu.gameIsPaused)
         {
-            if (Input.GetButton("Fire1") && Time.time >= nextTimeToFire)
+            if (_playerInput.IsFiring && Time.time >= nextTimeToFire)
             {
                 nextTimeToFire = Time.time + 1f / fireRate;
                 Shoot();

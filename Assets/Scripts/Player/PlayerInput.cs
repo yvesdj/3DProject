@@ -9,6 +9,7 @@ public class PlayerInput : MonoBehaviour
 
     public bool IsCrouching { get; set; }
     public bool IsJumping { get; set; }
+    public bool IsFiring { get; set; }
 
     // Update is called once per frame
     void Update()
@@ -23,5 +24,6 @@ public class PlayerInput : MonoBehaviour
 
         IsCrouching = Input.GetKeyDown(KeyCode.C);
         IsJumping = Input.GetButtonDown("Jump");
+        IsFiring = Input.GetButton("Fire1");
     }
 }
