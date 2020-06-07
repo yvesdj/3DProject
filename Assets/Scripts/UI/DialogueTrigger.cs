@@ -4,13 +4,14 @@ using UnityEngine;
 
 public class DialogueTrigger : MonoBehaviour, IEventTrigger
 {
+    public bool shootable = false;
     public Dialogue dialogue;
     //private bool _hasBeenTriggered = false;
-    public bool hasBeenTriggered { get; set; }
-
+    public bool HasBeenTriggered { get; set; }
+    
     void Start()
     {
-        hasBeenTriggered = false;
+        HasBeenTriggered = false;
     }
 
     public void OnTriggerEnter(Collider other)
@@ -21,10 +22,10 @@ public class DialogueTrigger : MonoBehaviour, IEventTrigger
 
     public void TriggerDialogue()
     {
-        if (hasBeenTriggered == false)
+        if (HasBeenTriggered == false)
         {
             FindObjectOfType<DialogueManager>().StartDialogue(dialogue);
-            hasBeenTriggered = true;
+            HasBeenTriggered = true;
         }
         else
         {

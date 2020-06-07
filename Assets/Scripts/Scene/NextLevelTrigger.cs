@@ -5,16 +5,16 @@ using UnityEngine.SceneManagement;
 
 public class NextLevelTrigger : MonoBehaviour, IEventTrigger
 {
-    public bool hasBeenTriggered { get; set; }
+    public bool HasBeenTriggered { get; set; }
 
     void Start()
     {
-        hasBeenTriggered = false;
+        HasBeenTriggered = false;
     }
 
     public void OnTriggerEnter(Collider other)
     {
-        hasBeenTriggered = true;
+        HasBeenTriggered = true;
         GoToNextLevel();
     }
 

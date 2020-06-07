@@ -2,6 +2,6 @@
 
 public interface IEventTrigger
 {
-    bool hasBeenTriggered { get; set; }
+    bool HasBeenTriggered { get; set; }
     void OnTriggerEnter(Collider other);
 }

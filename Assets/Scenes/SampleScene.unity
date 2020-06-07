@@ -14406,7 +14406,8 @@ MonoBehaviour:
   _playerInput: {fileID: 0}
   _crouchHandler: {fileID: 0}
   currentVelocity: {x: 0, y: 0, z: 0}
-  maxSpeed: 15
+  normalSpeed: 15
+  sprintSpeed: 20
   jumpVelocity: {x: 0, y: 0, z: 0}
   isJumping: 0
   gravity: -9.81
@@ -33181,6 +33182,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2d2001e84f805b54baa35226cbbc46f8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  shootable: 0
   dialogue:
     name: Ominous Voice
     sentences:
@@ -117629,6 +117631,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2d2001e84f805b54baa35226cbbc46f8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  shootable: 1
   dialogue:
     name: Innocent Box
     sentences:

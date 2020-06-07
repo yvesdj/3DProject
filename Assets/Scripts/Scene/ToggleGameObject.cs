@@ -4,14 +4,14 @@ using UnityEngine;
 
 public class ToggleGameObject : MonoBehaviour, IEventTrigger
 {
-    public bool hasBeenTriggered { get; set; }
+    public bool HasBeenTriggered { get; set; }
     public GameObject objectToToggle;
     private bool _isActive;
 
     // Start is called before the first frame update
     void Start()
     {
-        hasBeenTriggered = false;
+        HasBeenTriggered = false;
         _isActive = objectToToggle.activeSelf;
     }
 
@@ -25,10 +25,10 @@ public class ToggleGameObject : MonoBehaviour, IEventTrigger
 
     private void ToggleActive()
     {
-        if (hasBeenTriggered == false)
+        if (HasBeenTriggered == false)
         {
             _isActive = !_isActive;
-            hasBeenTriggered = true;
+            HasBeenTriggered = true;
         }
     }
 
