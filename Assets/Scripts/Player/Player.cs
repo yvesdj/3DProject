@@ -8,33 +8,33 @@ public class Player : MonoBehaviour
     public float maxHealth;
 
     //Jump uses this controller, jump needs to move to playermovement
-    public CharacterController controller;
+    //public CharacterController controller;
     public CrouchHandler crouchHandler;
-    public CollisionHandler collisionHandler;
+    //public CollisionHandler collisionHandler;
 
     public Transform playerBody;
     public Transform playerCamera;
 
     //CrouchHandler uses this, needs refactor to use from playermovemnt
-    public float maxSpeed = 15f;
+    //public float maxSpeed = 15f;
 
-    public float gravity = -9.81f;
-    public float jumpHeight = 3f;
+    //public float gravity = -9.81f;
+    //public float jumpHeight = 3f;
 
     
     
-    public Vector3 velocity;
+    //public Vector3 velocity;
 
     //public Vector3 currentVelocity;
-    public bool isJumping;
+    //public bool isJumping;
 
     private void Awake()
     {
         //healthHandler = GetComponent<IHealthHandler>();
         //healthHandler.CurrentHealth = maxHealth;
 
-        collisionHandler = GetComponent<CollisionHandler>();
-        crouchHandler = GetComponent<CrouchHandler>();
+        //collisionHandler = GetComponent<CollisionHandler>();
+        //crouchHandler = GetComponent<CrouchHandler>();
     }
 
     // Start is called before the first frame update
@@ -46,13 +46,13 @@ public class Player : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        collisionHandler.CheckCollission();
+        //collisionHandler.CheckCollission();
 
         //Movement();
 
-        Jump();
+        //Jump();
 
-        crouchHandler.CheckCrouch();
+        //crouchHandler.CheckCrouch();
     }
 
     //public void Movement()
@@ -66,16 +66,16 @@ public class Player : MonoBehaviour
     //    controller.Move(move * maxSpeed * Time.deltaTime);
     //}
 
-    public void Jump()
-    {
-        if (Input.GetButtonDown("Jump") && collisionHandler.isGrounded && !isJumping)
-        {
-            velocity.y = Mathf.Sqrt(jumpHeight * -2f * gravity);
-            isJumping = true;
-        }
+    //public void Jump()
+    //{
+    //    if (Input.GetButtonDown("Jump") && collisionHandler.isGrounded && !isJumping)
+    //    {
+    //        velocity.y = Mathf.Sqrt(jumpHeight * -2f * gravity);
+    //        isJumping = true;
+    //    }
 
-        velocity.y += gravity * Time.deltaTime;
+    //    velocity.y += gravity * Time.deltaTime;
 
-        controller.Move(velocity * Time.deltaTime);
-    }
+    //    controller.Move(velocity * Time.deltaTime);
+    //}
 }

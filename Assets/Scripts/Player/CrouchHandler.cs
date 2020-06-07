@@ -3,7 +3,10 @@ using UnityEngine;
 
 public class CrouchHandler : MonoBehaviour
 {
-    public Player player;
+    private Player _player;
+    private PlayerMovement _playerMovement;
+    private PlayerInput _playerInput;
+
     private Vector3 _playerDimensions;
     private Vector3 _collisionDetectorPosition;
     private Vector3 _playerCameraPosition;
@@ -23,23 +26,27 @@ public class CrouchHandler : MonoBehaviour
 
     private void Awake()
     {
-        c_standardHeight = player.controller.height;
+        _playerInput = GetComponent<PlayerInput>();
+        _player = GetComponent<Player>();
+        _playerMovement = GetComponent<PlayerMovement>();
 
-        _playerDimensions = player.playerBody.transform.localScale;
+        c_standardHeight = _playerMovement.Controller.height;
+
+        _playerDimensions = _player.playerBody.transform.localScale;
         p_standardHeight = _playerDimensions.y;
-        p_standardSpeed = player.maxSpeed;
+        p_standardSpeed = _playerMovement.maxSpeed;
         p_crouchSpeed = p_standardSpeed / 2;
         p_crouchHeight = p_standardHeight / 2;
 
-        _collisionDetectorPosition = player.collisionHandler.groundCheck.transform.localPosition;
+        _collisionDetectorPosition = _playerMovement.CollisionHandler.groundCheck.transform.localPosition;
 
-        _playerCameraPosition = player.playerCamera.transform.localPosition;
+        _playerCameraPosition = _player.playerCamera.transform.localPosition;
         p_cameraHeight = _playerCameraPosition.y;
     }
 
     public void CheckCrouch()
     {
-        if (Input.GetKeyDown(KeyCode.C))
+        if (_playerInput.IsCrouching)
         {
             _isCrouching = !_isCrouching;
         }
@@ -52,33 +59,33 @@ public class CrouchHandler : MonoBehaviour
         if (_isCrouching)
         {
             Crouch();
-            player.maxSpeed = p_crouchSpeed;
+            _playerMovement.maxSpeed = p_crouchSpeed;
         }
         else
         {
             Uncrouch();
-            player.maxSpeed = p_standardSpeed;
+            _playerMovement.maxSpeed = p_standardSpeed;
         }
     }
 
     private void Uncrouch()
     {
-        player.controller.height = c_standardHeight;
-        player.playerBody.transform.localScale = Utils.ChangeYFromVector3(_playerDimensions, p_standardHeight);
+        _playerMovement.Controller.height = c_standardHeight;
+        _player.playerBody.transform.localScale = Utils.ChangeYFromVector3(_playerDimensions, p_standardHeight);
 
-        player.collisionHandler.groundCheck.transform.localPosition = Utils.ChangeYFromVector3(_collisionDetectorPosition, player.collisionHandler.groundCheckYPos);
+        _playerMovement.CollisionHandler.groundCheck.transform.localPosition = Utils.ChangeYFromVector3(_collisionDetectorPosition, _playerMovement.CollisionHandler.groundCheckYPos);
 
-        player.playerCamera.transform.localPosition = Utils.ChangeYFromVector3(player.playerCamera.transform.localPosition, p_cameraHeight);
+        _player.playerCamera.transform.localPosition = Utils.ChangeYFromVector3(_player.playerCamera.transform.localPosition, p_cameraHeight);
     }
 
     private void Crouch()
     {
-        player.controller.height = c_crouchHeight;
-        player.playerBody.transform.localScale = Utils.ChangeYFromVector3(_playerDimensions, p_crouchHeight);
+        _playerMovement.Controller.height = c_crouchHeight;
+        _player.playerBody.transform.localScale = Utils.ChangeYFromVector3(_playerDimensions, p_crouchHeight);
 
-        player.collisionHandler.groundCheck.transform.localPosition = Utils.ChangeYFromVector3(_collisionDetectorPosition, player.collisionHandler.groundCheckYPos / 2);
+        _playerMovement.CollisionHandler.groundCheck.transform.localPosition = Utils.ChangeYFromVector3(_collisionDetectorPosition, _playerMovement.CollisionHandler.groundCheckYPos / 2);
 
-        player.playerCamera.transform.localPosition = Utils.ChangeYFromVector3(player.playerCamera.transform.localPosition, 0.5f);
+        _player.playerCamera.transform.localPosition = Utils.ChangeYFromVector3(_player.playerCamera.transform.localPosition, 0.5f);
 
     }
 }

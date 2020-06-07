@@ -7,20 +7,21 @@ public class PlayerInput : MonoBehaviour
     public float Horizontal { get; set; }
     public float Vertical { get; set; }
 
+    public bool IsCrouching { get; set; }
+    public bool IsJumping { get; set; }
+
     // Update is called once per frame
     void Update()
     {
-        Movement();
+        GetInput();
     }
 
-    public void Movement()
+    public void GetInput()
     {
         Horizontal = Input.GetAxis("Horizontal");
         Vertical = Input.GetAxis("Vertical");
 
-        //Vector3 move = transform.right * x + transform.forward * z;
-        //currentVelocity = controller.velocity;
-
-        //controller.Move(move * maxSpeed * Time.deltaTime);
+        IsCrouching = Input.GetKeyDown(KeyCode.C);
+        IsJumping = Input.GetButtonDown("Jump");
     }
 }

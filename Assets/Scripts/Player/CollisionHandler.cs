@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class CollisionHandler : MonoBehaviour
 {
-    public Player player;
+    private PlayerMovement _playerMovement;
 
     public Transform groundCheck;
     public float groundDistance = 0.4f;
@@ -12,6 +12,11 @@ public class CollisionHandler : MonoBehaviour
     public float groundCheckYPos;
 
     public bool isGrounded;
+
+    void Awake()
+    {
+        _playerMovement = GetComponent<PlayerMovement>();
+    }
 
     void Start()
     {
@@ -22,11 +27,13 @@ public class CollisionHandler : MonoBehaviour
     {
         isGrounded = CheckGrounded();
 
-        if (isGrounded && player.velocity.y < 0)
+        if (isGrounded && _playerMovement.currentVelocity.y < 0)
         {
-            player.velocity.y = -2f;
-            player.isJumping = false;
+            _playerMovement.currentVelocity.y = -2f;
+            _playerMovement.isJumping = false;
         }
+
+        Debug.Log(isGrounded);
     }
 
     private bool CheckGrounded()

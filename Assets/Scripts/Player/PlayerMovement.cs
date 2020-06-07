@@ -5,31 +5,55 @@ using UnityEngine;
 public class PlayerMovement : MonoBehaviour
 {
     private PlayerInput _playerInput;
-    private CharacterController _controller;
+    private CrouchHandler _crouchHandler;
+    public CharacterController Controller { get; set; }
+    //private CharacterController Controller;
+    public CollisionHandler CollisionHandler { get; set; }
+    //private CollisionHandler CollisionHandler;
 
-    private Vector3 _currentVelocity;
+    public Vector3 currentVelocity;
     public float maxSpeed = 15f;
+
+    public Vector3 jumpVelocity;
+    public bool isJumping;
+    public float gravity = -9.81f;
+    public float jumpHeight = 3f;
 
     void Awake()
     {
         _playerInput = GetComponent<PlayerInput>();
-        _controller = GetComponent<CharacterController>();
+        _crouchHandler = GetComponent<CrouchHandler>();
+        Controller = GetComponent<CharacterController>();
+        CollisionHandler = GetComponent<CollisionHandler>();
     }
 
     // Update is called once per frame
     void Update()
     {
+        CollisionHandler.CheckCollission();
+        _crouchHandler.CheckCrouch();
         Movement();
+        Jump();
     }
 
     public void Movement()
     {
-        //Horizontal = Input.GetAxis("Horizontal");
-        //Vertical = Input.GetAxis("Vertical");
-
         Vector3 move = transform.right * _playerInput.Horizontal + transform.forward * _playerInput.Vertical;
-        _currentVelocity = _controller.velocity;
+        currentVelocity = Controller.velocity;
 
-        _controller.Move(move * maxSpeed * Time.deltaTime);
+        Controller.Move(move * maxSpeed * Time.deltaTime);
+    }
+
+    public void Jump()
+    {
+        if (_playerInput.IsJumping && CollisionHandler.isGrounded && !isJumping)
+        {
+            currentVelocity.y = Mathf.Sqrt(jumpHeight * -2f * gravity);
+            isJumping = true;
+        }
+
+        currentVelocity.y += gravity * Time.deltaTime;
+
+        Controller.Move(currentVelocity * Time.deltaTime);
     }
 }
