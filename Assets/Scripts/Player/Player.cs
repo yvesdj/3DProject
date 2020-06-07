@@ -7,6 +7,7 @@ public class Player : MonoBehaviour
     //public IHealthHandler healthHandler;
     public float maxHealth;
 
+    //Jump uses this controller, jump needs to move to playermovement
     public CharacterController controller;
     public CrouchHandler crouchHandler;
     public CollisionHandler collisionHandler;
@@ -14,6 +15,7 @@ public class Player : MonoBehaviour
     public Transform playerBody;
     public Transform playerCamera;
 
+    //CrouchHandler uses this, needs refactor to use from playermovemnt
     public float maxSpeed = 15f;
 
     public float gravity = -9.81f;
@@ -23,7 +25,7 @@ public class Player : MonoBehaviour
     
     public Vector3 velocity;
 
-    public Vector3 currentVelocity;
+    //public Vector3 currentVelocity;
     public bool isJumping;
 
     private void Awake()
@@ -46,23 +48,23 @@ public class Player : MonoBehaviour
     {
         collisionHandler.CheckCollission();
 
-        Movement();
+        //Movement();
 
         Jump();
 
         crouchHandler.CheckCrouch();
     }
 
-    public void Movement()
-    {
-        float x = Input.GetAxis("Horizontal");
-        float z = Input.GetAxis("Vertical");
+    //public void Movement()
+    //{
+    //    float x = Input.GetAxis("Horizontal");
+    //    float z = Input.GetAxis("Vertical");
 
-        Vector3 move = transform.right * x + transform.forward * z;
-        currentVelocity = controller.velocity;
+    //    Vector3 move = transform.right * x + transform.forward * z;
+    //    currentVelocity = controller.velocity;
  
-        controller.Move(move * maxSpeed * Time.deltaTime);
-    }
+    //    controller.Move(move * maxSpeed * Time.deltaTime);
+    //}
 
     public void Jump()
     {
