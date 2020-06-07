@@ -94,12 +94,12 @@ public class EnemyGunHandler : MonoBehaviour
 
             CreateImpact(shotHit);
 
-            IHealthHandler target = shotHit.transform.parent.GetComponent<IHealthHandler>();
+            IHealthHandler target = shotHit.transform.GetComponentInParent<IHealthHandler>();
 
             if (target != null)
             {
                 target.TakeDamage(damage);
-            }  
+            }
         }
     }
 

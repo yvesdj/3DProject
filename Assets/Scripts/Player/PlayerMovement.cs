@@ -11,7 +11,8 @@ public class PlayerMovement : MonoBehaviour
     
 
     public Vector3 currentVelocity;
-    public float maxSpeed = 15f;
+    public float normalSpeed = 15f;
+    public float sprintSpeed = 20f;
 
     public Vector3 jumpVelocity;
     public bool isJumping;
@@ -44,10 +45,34 @@ public class PlayerMovement : MonoBehaviour
 
     public void Movement()
     {
+        float speed = normalSpeed;
         Vector3 move = transform.right * _playerInput.Horizontal + transform.forward * _playerInput.Vertical;
         currentVelocity = Controller.velocity;
+        speed = ChangeSpeed(speed);
+        Controller.Move(move * speed * Time.deltaTime);
+    }
 
-        Controller.Move(move * maxSpeed * Time.deltaTime);
+    private float ChangeSpeed(float speed)
+    {
+        if (_playerInput.isSprinting)
+        {
+            speed = sprintSpeed;
+        }
+
+        return speed;
+    }
+
+    public void Sprint()
+    {
+        float normalSpeed;
+        if (Input.GetKey(KeyCode.LeftShift))
+        {
+            this.normalSpeed = sprintSpeed;
+        }
+        else
+        {
+
+        }
     }
 
     public void Jump()

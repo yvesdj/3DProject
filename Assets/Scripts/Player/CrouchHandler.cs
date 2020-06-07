@@ -36,7 +36,7 @@ public class CrouchHandler : MonoBehaviour
 
         _playerDimensions = _player.playerBody.transform.localScale;
         p_standardHeight = _playerDimensions.y;
-        p_standardSpeed = _playerMovement.maxSpeed;
+        p_standardSpeed = _playerMovement.normalSpeed;
         p_crouchSpeed = p_standardSpeed / 2;
         p_crouchHeight = p_standardHeight / 2;
 
@@ -61,12 +61,12 @@ public class CrouchHandler : MonoBehaviour
         if (_isCrouching)
         {
             Crouch();
-            _playerMovement.maxSpeed = p_crouchSpeed;
+            _playerMovement.normalSpeed = p_crouchSpeed;
         }
         else
         {
             Uncrouch();
-            _playerMovement.maxSpeed = p_standardSpeed;
+            _playerMovement.normalSpeed = p_standardSpeed;
         }
     }
 
