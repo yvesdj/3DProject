@@ -7,6 +7,7 @@ public class PlayerHealthHandler : MonoBehaviour, IHealthHandler
 {
     public SimpleHealthBar healthBar;
     public Player player;
+    public SoundEffectPicker soundEffectPicker;
     public Transform respawnPoint;
 
     public float CurrentHealth { get; set; }
@@ -15,6 +16,7 @@ public class PlayerHealthHandler : MonoBehaviour, IHealthHandler
     void Start()
     {
         player = GetComponent<Player>();
+        soundEffectPicker = GetComponent<SoundEffectPicker>();
         CurrentHealth = MaxHealth;
     }
 
@@ -26,9 +28,9 @@ public class PlayerHealthHandler : MonoBehaviour, IHealthHandler
 
     public void TakeDamage(float amount)
     {
+        soundEffectPicker.PlayRandomHit();
         CurrentHealth -= amount;
         healthBar.UpdateBar(CurrentHealth, MaxHealth);
-        Debug.Log(CurrentHealth);
 
         if (CurrentHealth <= 0f)
         {
@@ -38,6 +40,7 @@ public class PlayerHealthHandler : MonoBehaviour, IHealthHandler
 
     private void Die()
     {
+        soundEffectPicker.PlayRandomDie();
         Debug.Log("You die now");
         player.transform.position = respawnPoint.transform.position;
         ResetHealth();

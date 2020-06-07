@@ -35,6 +35,5 @@ public class FogController : MonoBehaviour
         _currentFog = Mathf.Lerp(minimumFog, maximumFog, _startingFog);
         _startingFog -= transitionSpeed * Time.deltaTime;
         RenderSettings.fogDensity = _currentFog;
-        Debug.Log(RenderSettings.fogDensity);
     }
 }
