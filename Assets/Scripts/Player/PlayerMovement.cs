@@ -54,12 +54,12 @@ public class PlayerMovement : MonoBehaviour
     {
         if (_playerInput.IsJumping && CollisionHandler.isGrounded && !isJumping)
         {
-            currentVelocity.y = Mathf.Sqrt(jumpHeight * -2f * gravity);
+            jumpVelocity.y = Mathf.Sqrt(jumpHeight * -2f * gravity);
             isJumping = true;
         }
 
-        currentVelocity.y += gravity * Time.deltaTime;
+        jumpVelocity.y += gravity * Time.deltaTime;
 
-        Controller.Move(currentVelocity * Time.deltaTime);
+        Controller.Move(jumpVelocity * Time.deltaTime);
     }
 }
