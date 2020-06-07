@@ -26495,6 +26495,7 @@ MonoBehaviour:
       jump! Press the spacebar to leap over.. Stuff.
     - Hey, you didn't ask me who I am.. Guess I haven't  programmed you some basic
       decency.
+  shootable: 0
 --- !u!65 &753941417
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -46507,6 +46508,7 @@ MonoBehaviour:
     - To move about in this realm, use the WASD keys. Go ahead and get used to the
       movement.
     - If you feel comfortable, go ahead and follow the markings on the floor.
+  shootable: 0
 --- !u!65 &1142560068
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -47120,6 +47122,7 @@ MonoBehaviour:
     sentences:
     - Wel done! It seems the movement module is working fine.
     - Here's where the fun starts. You'll be programmed with a debugging tool shortly.
+  shootable: 0
 --- !u!65 &1180627892
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -57013,6 +57016,7 @@ MonoBehaviour:
     - Great, you jumped onto something. They call me Optimus Prime, thanks for asking.
     - Keep following the markers. And try not to fall, I'm not in the mood to keep
       instantiating you again.
+  shootable: 0
 --- !u!65 &1429832807
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -60930,6 +60934,7 @@ MonoBehaviour:
     sentences:
     - Easy.. Oh you're able to shorten your body by pressing the "C" key. Humans
       call it crouching apparantly.
+  shootable: 0
 --- !u!65 &1641118480
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -67855,6 +67860,7 @@ MonoBehaviour:
     - You can jump around objects, because physics work quite a bit different here.
       Give it a try!
     - No pressure, just dont fall.
+  shootable: 0
 --- !u!65 &1761126928
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -69313,9 +69319,9 @@ GameObject:
   - component: {fileID: 1914116296}
   - component: {fileID: 1914116295}
   - component: {fileID: 1914116294}
+  - component: {fileID: 1914116302}
   - component: {fileID: 1914116301}
   - component: {fileID: 1914116300}
-  - component: {fileID: 1914116302}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -69430,6 +69436,22 @@ MonoBehaviour:
   m_GameObject: {fileID: 1914116293}
   m_Enabled: 1
   m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 675a2e107c7a109409a34581b3c49e6e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  hitClips: []
+  dieClips: []
+  audioSource: {fileID: 0}
+  audioListener: {fileID: 0}
+--- !u!114 &1914116301
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1914116293}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ef86dc61550134d46819a3a53678e7fc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
@@ -69442,7 +69464,7 @@ MonoBehaviour:
   isJumping: 0
   gravity: -9.81
   jumpHeight: 3
---- !u!114 &1914116301
+--- !u!114 &1914116302
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -69454,22 +69476,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ec22e4368b9f136489dc8219e2f55ebd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &1914116302
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1914116293}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 675a2e107c7a109409a34581b3c49e6e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  hitClips: []
-  dieClips: []
-  audioSource: {fileID: 0}
-  audioListener: {fileID: 0}
 --- !u!1 &1920024082
 GameObject:
   m_ObjectHideFlags: 0

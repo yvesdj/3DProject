@@ -62,19 +62,6 @@ public class PlayerMovement : MonoBehaviour
         return speed;
     }
 
-    public void Sprint()
-    {
-        float normalSpeed;
-        if (Input.GetKey(KeyCode.LeftShift))
-        {
-            this.normalSpeed = sprintSpeed;
-        }
-        else
-        {
-
-        }
-    }
-
     public void Jump()
     {
         if (_playerInput.IsJumping && CollisionHandler.isGrounded && !isJumping)

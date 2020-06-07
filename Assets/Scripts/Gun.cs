@@ -80,7 +80,7 @@ public class Gun : MonoBehaviour
                 targetHealth.TakeDamage(damage);
             }
 
-            if (dialogueTrigger != null)
+            if (dialogueTrigger != null && dialogueTrigger.shootable)
             {
                 dialogueTrigger.TriggerDialogue();
             }
