@@ -6,14 +6,15 @@ public class SoundEffectPicker : MonoBehaviour
 {
     public AudioClip[] hitClips;
     public AudioClip[] dieClips;
+    public AudioClip[] zingerClips;
 
-    public AudioSource audioSource;
+    public AudioSource[] audioSources;
     public AudioListener audioListener;
 
     // Start is called before the first frame update
     void Start()
     {
-        audioSource = GetComponentInChildren<AudioSource>();
+        audioSources = GetComponents<AudioSource>();
         audioListener = GetComponentInChildren<AudioListener>();
     }
 
@@ -25,16 +26,22 @@ public class SoundEffectPicker : MonoBehaviour
 
     public void PlayRandomHit()
     {
-        audioSource.clip = hitClips[Random.Range(0, hitClips.Length)];
-        if (!audioSource.isPlaying)
+        audioSources[0].clip = hitClips[Random.Range(0, hitClips.Length)];
+        if (!audioSources[0].isPlaying)
         {
-            audioSource.Play();
+            audioSources[0].Play();
         }
     }
 
     public void PlayRandomDie()
     {
-        audioSource.clip = dieClips[Random.Range(0, dieClips.Length)];
-        audioSource.Play();
+        audioSources[0].clip = dieClips[Random.Range(0, dieClips.Length)];
+        audioSources[0].Play();
+    }
+
+    public void PlayRandomZinger()
+    {
+        audioSources[1].clip = zingerClips[Random.Range(0, dieClips.Length)];
+        audioSources[1].Play();
     }
 }
