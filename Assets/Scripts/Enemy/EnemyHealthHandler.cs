@@ -35,6 +35,13 @@ public class EnemyHealthHandler : MonoBehaviour, IHealthHandler
         
         if (CurrentHealth <= 0f)
         {
+            SoundEffectPicker soundEffectPicker = FindObjectOfType<SoundEffectPicker>();
+            if (soundEffectPicker != null)
+            {
+                Debug.Log(soundEffectPicker);
+                soundEffectPicker.PlayRandomZinger();
+            }
+            
             Die();
         }
     }
