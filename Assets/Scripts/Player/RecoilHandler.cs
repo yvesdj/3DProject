@@ -4,9 +4,6 @@ using UnityEngine;
 
 public class RecoilHandler : MonoBehaviour
 {
-    public float sideRecoilForce;
-    public float upwardsRecoilForce;
-
     public float sideRecoil;
     public float upwardsRecoil;
 
@@ -16,7 +13,7 @@ public class RecoilHandler : MonoBehaviour
         upwardsRecoil = 0;
     }
 
-    public void SetRecoil()
+    public void SetRecoil(float upwardsRecoilForce, float sideRecoilForce)
     {
         upwardsRecoil += upwardsRecoilForce;
         sideRecoil += sideRecoilForce;
