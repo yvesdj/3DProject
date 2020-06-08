@@ -41,7 +41,7 @@ public class SoundEffectPicker : MonoBehaviour
 
     public void PlayRandomZinger()
     {
-        audioSources[1].clip = zingerClips[Random.Range(0, dieClips.Length)];
+        audioSources[1].clip = zingerClips[Random.Range(0, zingerClips.Length)];
         audioSources[1].Play();
     }
 }
