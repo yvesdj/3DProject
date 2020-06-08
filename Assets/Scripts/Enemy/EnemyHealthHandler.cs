@@ -35,15 +35,26 @@ public class EnemyHealthHandler : MonoBehaviour, IHealthHandler
         
         if (CurrentHealth <= 0f)
         {
-            SoundEffectPicker soundEffectPicker = FindObjectOfType<SoundEffectPicker>();
-            if (soundEffectPicker != null)
-            {
-                Debug.Log(soundEffectPicker);
-                soundEffectPicker.PlayRandomZinger();
-            }
-            
+            AddScore();
+            PlaySound();
+
             Die();
         }
+    }
+
+    private static void PlaySound()
+    {
+        SoundEffectPicker soundEffectPicker = FindObjectOfType<SoundEffectPicker>();
+        if (soundEffectPicker != null)
+        {
+            soundEffectPicker.PlayRandomZinger();
+        }
+    }
+
+    private void AddScore()
+    {
+        ScoreHandler scoreHandler = FindObjectOfType<ScoreHandler>();
+        scoreHandler.AddScore(enemy.scoreAmount);
     }
 
     private void Die()

@@ -751,11 +751,13 @@ MonoBehaviour:
   impactEffect: {fileID: 100002, guid: 99c73c92ac40473459640b165473206f, type: 3}
   bulletTrail: {fileID: 120648884187509030, guid: d2ec70c814159504cb3e12e99b00b151,
     type: 3}
+  isActive: 0
   maxEngageRange: 70
   damage: 10
   fireRate: 0.3
   scaleLimit: 0.1
   z: 2
+  positionDelay: 0.5
   impactForce: 5
 --- !u!1 &3093085409342076293
 GameObject:
@@ -1146,6 +1148,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maxHealth: 60
+  scoreAmount: 60
 --- !u!114 &3093085409704391864
 MonoBehaviour:
   m_ObjectHideFlags: 0
