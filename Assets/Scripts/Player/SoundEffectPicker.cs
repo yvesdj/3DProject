@@ -12,7 +12,7 @@ public class SoundEffectPicker : MonoBehaviour
     public AudioListener audioListener;
 
     // Start is called before the first frame update
-    void Start()
+    void Awake()
     {
         audioSources = GetComponents<AudioSource>();
         audioListener = GetComponentInChildren<AudioListener>();

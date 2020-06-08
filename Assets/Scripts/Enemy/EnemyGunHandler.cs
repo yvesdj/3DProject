@@ -27,6 +27,7 @@ public class EnemyGunHandler : MonoBehaviour
     void Start()
     {
         _audioSource = GetComponent<AudioSource>();
+        target = GameObject.FindGameObjectWithTag("Player");
     }
 
     // Update is called once per frame
