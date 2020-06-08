@@ -18,12 +18,6 @@ public class SoundEffectPicker : MonoBehaviour
         audioListener = GetComponentInChildren<AudioListener>();
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-
     public void PlayRandomHit()
     {
         audioSources[0].clip = hitClips[Random.Range(0, hitClips.Length)];

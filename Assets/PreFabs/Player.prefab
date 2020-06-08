@@ -5211,7 +5211,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &1557117050389229506
 Transform:
   m_ObjectHideFlags: 0
@@ -5557,6 +5557,18 @@ MonoBehaviour:
   amount: 5
   maxAmount: 10
   smoothingAmount: 5
+--- !u!114 &1557117051300277173
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1557117051300310303}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a24ebf67ad6ee6148ba89a984ae9c218, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &1557117051300277175
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5580,18 +5592,6 @@ MonoBehaviour:
   impactEffect: {fileID: 100002, guid: 3b1513bcb86426b4795879be6a128ed7, type: 3}
   bulletTrail: {fileID: 120648884187509030, guid: d2ec70c814159504cb3e12e99b00b151,
     type: 3}
---- !u!114 &1557117051300277173
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1557117051300310303}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a24ebf67ad6ee6148ba89a984ae9c218, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &1557117051680532726
 GameObject:
   m_ObjectHideFlags: 0

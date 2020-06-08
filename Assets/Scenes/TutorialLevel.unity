@@ -74455,6 +74455,26 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1557117050044637626, guid: 7a47ec716de528643a77cbbf07aabd8e,
+        type: 3}
+      propertyPath: m_audioClip
+      value: 
+      objectReference: {fileID: 8300000, guid: 7fa450a72f1a77d45b4f208479050572, type: 3}
+    - target: {fileID: 1557117050044637626, guid: 7a47ec716de528643a77cbbf07aabd8e,
+        type: 3}
+      propertyPath: m_Volume
+      value: 0.285
+      objectReference: {fileID: 0}
+    - target: {fileID: 1557117050044637626, guid: 7a47ec716de528643a77cbbf07aabd8e,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1557117050389229507, guid: 7a47ec716de528643a77cbbf07aabd8e,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1557117051680532725, guid: 7a47ec716de528643a77cbbf07aabd8e,
         type: 3}
       propertyPath: healthBar
@@ -74469,6 +74489,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Player
+      objectReference: {fileID: 0}
+    - target: {fileID: 1557117051680532726, guid: 7a47ec716de528643a77cbbf07aabd8e,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1557117051680532728, guid: 7a47ec716de528643a77cbbf07aabd8e,
         type: 3}
