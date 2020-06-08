@@ -10,11 +10,16 @@ public class ReturnToSpawn : MonoBehaviour
 
     public void OnTriggerEnter(Collider other)
     {
-        Respawn();
+        if (other.CompareTag("Player"))
+        {
+            Respawn();
+        } 
     }
 
     private void Respawn()
     {
+        SoundEffectPicker soundEffectPicker = FindObjectOfType<SoundEffectPicker>();
+        soundEffectPicker.PlayRandomDie();
         player.transform.position = respawnPoint.transform.position;
         player.GetComponent<PlayerHealthHandler>().ResetHealth();
     }
