@@ -5850,7 +5850,7 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
+  m_Size: {x: 2.0124803, y: 4.0637965, z: 2.4733317}
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!23 &156957782
 MeshRenderer:
@@ -5911,7 +5911,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d4e7194005ec3224f9ace5b550d10581, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  respawnTime: 20
+  respawnTime: 30
 --- !u!114 &156957785
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6135,8 +6135,10 @@ GameObject:
   - component: {fileID: 251887271}
   - component: {fileID: 251887270}
   - component: {fileID: 251887269}
+  - component: {fileID: 251887273}
+  - component: {fileID: 251887272}
   m_Layer: 0
-  m_Name: Capsule
+  m_Name: FireRatePickup
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -6164,10 +6166,10 @@ CapsuleCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 251887267}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
-  m_Radius: 0.5
-  m_Height: 2
+  m_Radius: 2.56159
+  m_Height: 5.123179
   m_Direction: 1
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!23 &251887270
@@ -6217,6 +6219,33 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 251887267}
   m_Mesh: {fileID: 10208, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &251887272
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 251887267}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: eddf2b8a7d153fa48b691ce640b801a0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  timesROF: 2
+  duration: 10
+--- !u!114 &251887273
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 251887267}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d4e7194005ec3224f9ace5b550d10581, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  respawnTime: 30
 --- !u!1 &257254879
 GameObject:
   m_ObjectHideFlags: 0
@@ -14186,8 +14215,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 61d2d96f8a0aee74481371ce79a6f992, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sideRecoilForce: 0.25
-  upwardsRecoilForce: 1
   sideRecoil: 0
   upwardsRecoil: 0
 --- !u!114 &963194231
@@ -33698,6 +33725,8 @@ MonoBehaviour:
   damage: 10
   range: 100
   fireRate: 10
+  sideRecoilForce: 0.25
+  upwardsRecoilForce: 1
   impactForce: 100
   fpsCam: {fileID: 963194227}
   muzzleFlash: {fileID: 80309919}
@@ -33815,6 +33844,18 @@ MonoBehaviour:
   amount: 5
   maxAmount: 10
   smoothingAmount: 5
+--- !u!114 &1132370560
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1132370554}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a24ebf67ad6ee6148ba89a984ae9c218, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1145408083
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -118223,8 +118264,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1997847673}
-  - component: {fileID: 1997847675}
-  - component: {fileID: 1997847674}
   m_Layer: 0
   m_Name: Pickups
   m_TagString: Untagged
@@ -118248,33 +118287,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 16
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1997847674
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1997847672}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: eddf2b8a7d153fa48b691ce640b801a0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  timesROF: 2
-  duration: 5
---- !u!114 &1997847675
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1997847672}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d4e7194005ec3224f9ace5b550d10581, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  respawnTime: 5
 --- !u!1 &2061455688
 GameObject:
   m_ObjectHideFlags: 0

@@ -7,6 +7,9 @@ public class GunEffectHandler : MonoBehaviour
     private Gun _gun;
 
     private float _originalROF;
+    private float _originalSideRecoil;
+    private float _originalUpRecoil;
+
     public bool IsEnhanced { get; set; }
     public float Multiplier { get; internal set; }
     public float Duration { get; internal set; }
@@ -20,6 +23,9 @@ public class GunEffectHandler : MonoBehaviour
     void Start()
     {
         _originalROF = _gun.fireRate;
+        _originalSideRecoil = _gun.sideRecoilForce;
+        _originalUpRecoil = _gun.upwardsRecoilForce;
+
         IsEnhanced = false;
     }
 
@@ -34,6 +40,9 @@ public class GunEffectHandler : MonoBehaviour
         if (IsEnhanced)
         {
             _gun.fireRate *= Multiplier;
+            _gun.sideRecoilForce /= Multiplier;
+            _gun.upwardsRecoilForce /= Multiplier;
+
             StartCoroutine(ReturnToNormalAfterTime());
             IsEnhanced = false;
         }
@@ -43,7 +52,8 @@ public class GunEffectHandler : MonoBehaviour
     {
         yield return new WaitForSeconds(Duration);
 
-        //IsEnhanced = false;
         _gun.fireRate = _originalROF;
+        _gun.sideRecoilForce = _originalSideRecoil;
+        _gun.upwardsRecoilForce = _originalUpRecoil;
     }
 }
