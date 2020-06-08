@@ -5,7 +5,7 @@ using UnityEngine;
 public class EnemyGunHandler : MonoBehaviour
 {
     public GameObject target;
-
+    private Vector3 targetLastPosition;
 
     private AudioSource _audioSource;
     public ParticleSystem muzzleFlash;
@@ -23,6 +23,8 @@ public class EnemyGunHandler : MonoBehaviour
 
     public float scaleLimit = 2.0f;
     public float z = 10f;
+    public float positionDelay = 0.5f;
+    private bool _isDelaying;
 
     public float impactForce = 5f;
 
@@ -33,26 +35,51 @@ public class EnemyGunHandler : MonoBehaviour
         target = GameObject.FindGameObjectWithTag("Player");
         _layerMask = ~LayerMask.GetMask("Invisible");
         isActive = true;
+        _isDelaying = false;
     }
 
     // Update is called once per frame
     void Update()
     {
-        
-        //isEngaging = IsInRange();
-        if (isActive)
+        if (_isDelaying == false)
         {
-            if (IsInRange())
-            {
-                transform.LookAt(target.transform);
-            }
-
-            if (IsLineOfSight())
-            {
-                Shoot();
-            }
+            StartCoroutine(Delay());
+            _isDelaying = true;
         }
         
+        if (isActive)
+        {
+            //if (IsInRange())
+            //{
+            //    transform.LookAt(DelayedPosition());
+            //}
+
+            //if (IsLineOfSight())
+            //{
+                Shoot();
+            //}
+        }
+
+        
+    }
+
+    IEnumerator Delay()
+    {
+        yield return new WaitForSeconds(positionDelay);
+
+        if (IsInRange())
+        {
+            transform.LookAt(DelayedPosition());
+        }
+
+        _isDelaying = false;
+    }
+
+    private Vector3 DelayedPosition()
+    {
+        Vector3 targetLastPosition = target.transform.position;
+        Debug.Log(Time.deltaTime + "    Delayed position: " + targetLastPosition);
+        return targetLastPosition;
     }
 
     private bool IsInRange()
