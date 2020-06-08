@@ -14,7 +14,7 @@ OcclusionCullingSettings:
 RenderSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 9
-  m_Fog: 1
+  m_Fog: 0
   m_FogColor: {r: 0, g: 0.25525114, b: 0.6226415, a: 1}
   m_FogMode: 3
   m_FogDensity: 0.2
@@ -26488,6 +26488,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2d2001e84f805b54baa35226cbbc46f8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  shootable: 0
   dialogue:
     name: Ominous Voice
     sentences:
@@ -26495,7 +26496,6 @@ MonoBehaviour:
       jump! Press the spacebar to leap over.. Stuff.
     - Hey, you didn't ask me who I am.. Guess I haven't  programmed you some basic
       decency.
-  shootable: 0
 --- !u!65 &753941417
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -46497,6 +46497,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2d2001e84f805b54baa35226cbbc46f8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  shootable: 0
   dialogue:
     name: Ominous Voice
     sentences:
@@ -46508,7 +46509,6 @@ MonoBehaviour:
     - To move about in this realm, use the WASD keys. Go ahead and get used to the
       movement.
     - If you feel comfortable, go ahead and follow the markings on the floor.
-  shootable: 0
 --- !u!65 &1142560068
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -47117,12 +47117,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2d2001e84f805b54baa35226cbbc46f8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  shootable: 0
   dialogue:
     name: Optimus Prime
     sentences:
     - Wel done! It seems the movement module is working fine.
     - Here's where the fun starts. You'll be programmed with a debugging tool shortly.
-  shootable: 0
 --- !u!65 &1180627892
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -57010,13 +57010,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2d2001e84f805b54baa35226cbbc46f8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  shootable: 0
   dialogue:
     name: Optimus Prime
     sentences:
     - Great, you jumped onto something. They call me Optimus Prime, thanks for asking.
     - Keep following the markers. And try not to fall, I'm not in the mood to keep
       instantiating you again.
-  shootable: 0
 --- !u!65 &1429832807
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -59043,6 +59043,18 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &1568463750
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1568463746}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a24ebf67ad6ee6148ba89a984ae9c218, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!43 &1578756519
 Mesh:
   m_ObjectHideFlags: 0
@@ -60929,12 +60941,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2d2001e84f805b54baa35226cbbc46f8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  shootable: 0
   dialogue:
     name: Optimus Prime
     sentences:
     - Easy.. Oh you're able to shorten your body by pressing the "C" key. Humans
       call it crouching apparantly.
-  shootable: 0
 --- !u!65 &1641118480
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -67854,13 +67866,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2d2001e84f805b54baa35226cbbc46f8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  shootable: 0
   dialogue:
     name: Optimus Prime
     sentences:
     - You can jump around objects, because physics work quite a bit different here.
       Give it a try!
     - No pressure, just dont fall.
-  shootable: 0
 --- !u!65 &1761126928
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -69441,7 +69453,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   hitClips: []
   dieClips: []
-  audioSource: {fileID: 0}
+  zingerClips: []
+  audioSources: []
   audioListener: {fileID: 0}
 --- !u!114 &1914116301
 MonoBehaviour:

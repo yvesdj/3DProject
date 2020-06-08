@@ -27,9 +27,9 @@ public class Gun : MonoBehaviour
 
 
     //Part of Pickups, should move
-    public bool IsEnhanced { get; set; }
-    public float effectDuration;
-    private float _originalFireRate;
+    //public bool IsEnhanced { get; set; }
+    //public float effectDuration;
+    //private float _originalFireRate;
 
 
     private void Awake()
@@ -38,8 +38,10 @@ public class Gun : MonoBehaviour
         _animator = GetComponent<Animator>();
         _audioSource = GetComponent<AudioSource>();
         _playerInput = GetComponentInParent<PlayerInput>();
-        IsEnhanced = false;
-        _originalFireRate = fireRate;
+
+
+        //IsEnhanced = false;
+        //_originalFireRate = fireRate;
     }
 
     // Update is called once per frame
@@ -48,19 +50,19 @@ public class Gun : MonoBehaviour
         _animator.SetBool("isFiring", false);
         CheckInput();
 
-        if (IsEnhanced == true)
-        {
-            StartCoroutine(ReturnToNormalAfterTime());
-        }
+        //if (IsEnhanced == true)
+        //{
+        //    StartCoroutine(ReturnToNormalAfterTime());
+        //}
     }
 
-    IEnumerator ReturnToNormalAfterTime()
-    {
-        yield return new WaitForSeconds(effectDuration);
+    //IEnumerator ReturnToNormalAfterTime()
+    //{
+    //    yield return new WaitForSeconds(effectDuration);
 
-        IsEnhanced = false;
-        fireRate = _originalFireRate;
-    }
+    //    IsEnhanced = false;
+    //    fireRate = _originalFireRate;
+    //}
 
     private void CheckInput()
     {

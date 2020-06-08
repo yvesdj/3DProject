@@ -5,11 +5,13 @@ using UnityEngine;
 public class FireRatePickup : MonoBehaviour, IPickup
 {
     public float timesROF;
+    public float duration;
 
     public void EnhancePlayer(Collider player)
     {
-        Gun playerGun = player.GetComponentInChildren<Gun>();
-        playerGun.fireRate *= timesROF;
+        GunEffectHandler playerGun = player.GetComponentInChildren<GunEffectHandler>();
+        playerGun.Multiplier = timesROF;
+        playerGun.Duration = duration;
         playerGun.IsEnhanced = true;
     }
 }
