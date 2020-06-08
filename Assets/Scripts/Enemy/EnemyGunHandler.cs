@@ -13,6 +13,8 @@ public class EnemyGunHandler : MonoBehaviour
     public LineRenderer bulletTrail;
     private LayerMask _layerMask;
 
+    public bool isActive;
+
     public float maxEngageRange;
     public float damage = 10f;
 
@@ -25,27 +27,32 @@ public class EnemyGunHandler : MonoBehaviour
     public float impactForce = 5f;
 
     // Start is called before the first frame update
-    void Start()
+    void Awake()
     {
         _audioSource = GetComponent<AudioSource>();
         target = GameObject.FindGameObjectWithTag("Player");
         _layerMask = ~LayerMask.GetMask("Invisible");
+        isActive = true;
     }
 
     // Update is called once per frame
     void Update()
     {
+        
         //isEngaging = IsInRange();
-
-        if (IsInRange())
+        if (isActive)
         {
-            transform.LookAt(target.transform);
-        }
+            if (IsInRange())
+            {
+                transform.LookAt(target.transform);
+            }
 
-        if (IsLineOfSight())
-        {
-            Shoot();
+            if (IsLineOfSight())
+            {
+                Shoot();
+            }
         }
+        
     }
 
     private bool IsInRange()
