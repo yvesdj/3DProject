@@ -74,7 +74,6 @@ public class EnemyGunHandler : MonoBehaviour
     private Vector3 DelayedPosition()
     {
         Vector3 targetLastPosition = target.transform.position;
-        Debug.Log(Time.deltaTime + "    Delayed position: " + targetLastPosition);
         return targetLastPosition;
     }
 
