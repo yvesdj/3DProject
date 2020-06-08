@@ -48,7 +48,11 @@ public class PlayerMovement : MonoBehaviour
         float speed = normalSpeed;
         Vector3 move = transform.right * _playerInput.Horizontal + transform.forward * _playerInput.Vertical;
         currentVelocity = Controller.velocity;
-        speed = ChangeSpeed(speed);
+        if (!_crouchHandler.IsCrouching)
+        {
+            speed = ChangeSpeed(speed);
+        }
+        //speed = ChangeSpeed(speed);
         Controller.Move(move * speed * Time.deltaTime);
     }
 

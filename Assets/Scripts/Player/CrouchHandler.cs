@@ -21,7 +21,8 @@ public class CrouchHandler : MonoBehaviour
     private float p_standardSpeed;
     private float p_crouchSpeed;
 
-    private bool _isCrouching;
+    //private bool IsCrouching;
+    public bool IsCrouching { get; private set; }
 
     private void Awake()
     {
@@ -50,7 +51,7 @@ public class CrouchHandler : MonoBehaviour
     {
         if (_playerInput.IsCrouching)
         {
-            _isCrouching = !_isCrouching;
+            IsCrouching = !IsCrouching;
         }
 
         DoCrouch();
@@ -58,7 +59,7 @@ public class CrouchHandler : MonoBehaviour
 
     private void DoCrouch()
     {
-        if (_isCrouching)
+        if (IsCrouching)
         {
             Crouch();
             _playerMovement.normalSpeed = p_crouchSpeed;
