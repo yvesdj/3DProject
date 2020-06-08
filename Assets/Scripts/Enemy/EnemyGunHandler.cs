@@ -24,6 +24,7 @@ public class EnemyGunHandler : MonoBehaviour
     public float scaleLimit = 2.0f;
     public float z = 10f;
     public float positionDelay = 0.5f;
+    private bool _isLOS;
     private bool _isDelaying;
 
     public float impactForce = 5f;
@@ -49,18 +50,11 @@ public class EnemyGunHandler : MonoBehaviour
         
         if (isActive)
         {
-            //if (IsInRange())
-            //{
-            //    transform.LookAt(DelayedPosition());
-            //}
-
-            //if (IsLineOfSight())
-            //{
+            if (_isLOS)
+            {
                 Shoot();
-            //}
+            }
         }
-
-        
     }
 
     IEnumerator Delay()
@@ -71,6 +65,8 @@ public class EnemyGunHandler : MonoBehaviour
         {
             transform.LookAt(DelayedPosition());
         }
+
+        _isLOS = IsLineOfSight();
 
         _isDelaying = false;
     }
