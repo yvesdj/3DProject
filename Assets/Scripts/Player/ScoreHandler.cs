@@ -6,9 +6,11 @@ using UnityEngine;
 public class ScoreHandler : MonoBehaviour
 {
     public float score;
+    public float addedDisplayTime;
 
     public TextMeshProUGUI scoreTotal;
     public TextMeshProUGUI scoreAdded;
+    public Animator animator;
 
     private void Start()
     {
@@ -17,9 +19,11 @@ public class ScoreHandler : MonoBehaviour
 
     public void AddScore(float amount)
     {
+        animator.SetBool("IsShowing", true);
         score += amount;
         scoreAdded.text = "+" + amount.ToString();
         UpdateTotalScore();
+        StartCoroutine(FadeScoreAdded());
         Debug.Log("Score: " + score);
     }
 
@@ -28,5 +32,10 @@ public class ScoreHandler : MonoBehaviour
         scoreTotal.text = score.ToString();
     }
 
+    IEnumerator FadeScoreAdded()
+    {
+        yield return new WaitForSeconds(addedDisplayTime);
 
+        animator.SetBool("IsShowing", false);
+    }
 }
