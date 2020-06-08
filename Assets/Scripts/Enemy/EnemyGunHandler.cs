@@ -11,6 +11,7 @@ public class EnemyGunHandler : MonoBehaviour
     public ParticleSystem muzzleFlash;
     public GameObject impactEffect;
     public LineRenderer bulletTrail;
+    private LayerMask _layerMask;
 
     public float maxEngageRange;
     public float damage = 10f;
@@ -28,6 +29,7 @@ public class EnemyGunHandler : MonoBehaviour
     {
         _audioSource = GetComponent<AudioSource>();
         target = GameObject.FindGameObjectWithTag("Player");
+        _layerMask = ~LayerMask.GetMask("Invisible");
     }
 
     // Update is called once per frame
@@ -71,7 +73,7 @@ public class EnemyGunHandler : MonoBehaviour
     private bool IsLineOfSight()
     {
         RaycastHit hit;
-        if (Physics.Raycast(muzzleFlash.transform.position, muzzleFlash.transform.forward, out hit, maxEngageRange) && hit.transform.name == "Body")
+        if (Physics.Raycast(muzzleFlash.transform.position, muzzleFlash.transform.forward, out hit, maxEngageRange, _layerMask) && hit.transform.name == "Body")
         {
             return true;
         }
@@ -88,7 +90,7 @@ public class EnemyGunHandler : MonoBehaviour
         direction = muzzleFlash.transform.TransformDirection(direction.normalized);
 
         RaycastHit shotHit;
-        if (Physics.Raycast(muzzleFlash.transform.position, direction, out shotHit, maxEngageRange))
+        if (Physics.Raycast(muzzleFlash.transform.position, direction, out shotHit, maxEngageRange, _layerMask))
         {
             Debug.Log(shotHit.transform.name);
             CreateBulletTrail(shotHit);

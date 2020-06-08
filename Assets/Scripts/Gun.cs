@@ -10,6 +10,7 @@ public class Gun : MonoBehaviour
     private Animator _animator;
     private RecoilHandler _recoilHandler;
     private PlayerInput _playerInput;
+    private LayerMask _layerMask;
 
     public float damage = 10f;
     public float range = 100f;
@@ -33,6 +34,7 @@ public class Gun : MonoBehaviour
         _animator = GetComponent<Animator>();
         _audioSource = GetComponent<AudioSource>();
         _playerInput = GetComponentInParent<PlayerInput>();
+        _layerMask = ~LayerMask.GetMask("Invisible");
     }
 
     // Update is called once per frame
@@ -70,7 +72,7 @@ public class Gun : MonoBehaviour
     private void CheckHit()
     {
         RaycastHit hit;
-        if (Physics.Raycast(muzzleFlash.transform.position, fpsCam.transform.forward, out hit, range))
+        if (Physics.Raycast(muzzleFlash.transform.position, fpsCam.transform.forward, out hit, range, _layerMask))
         {
             Debug.Log(hit.transform.name);
 
