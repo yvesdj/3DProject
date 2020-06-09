@@ -109710,5 +109710,27 @@ PrefabInstance:
       propertyPath: m_Pivot.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6735162270461873748, guid: 6fde72b766e945449a5342502064897f,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 3809985359489656579}
+    - target: {fileID: 6735162270461873748, guid: 6fde72b766e945449a5342502064897f,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: QuitGame
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6fde72b766e945449a5342502064897f, type: 3}
+--- !u!114 &3809985359489656579 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3809985360369756358, guid: 6fde72b766e945449a5342502064897f,
+    type: 3}
+  m_PrefabInstance: {fileID: 3809985359489656578}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1562528494}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2279cf20c90f1334ca38eb7900bb9012, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
