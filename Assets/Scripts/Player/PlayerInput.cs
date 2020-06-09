@@ -7,10 +7,12 @@ public class PlayerInput : MonoBehaviour
     public float Horizontal { get; set; }
     public float Vertical { get; set; }
 
+    public bool IsEnabled { get; set; }
+
     public bool IsCrouching { get; set; }
     public bool IsJumping { get; set; }
     public bool IsFiring { get; set; }
-    public bool isSprinting { get; set; }
+    public bool IsSprinting { get; set; }
 
     // Update is called once per frame
     void Update()
@@ -20,12 +22,16 @@ public class PlayerInput : MonoBehaviour
 
     public void GetInput()
     {
-        Horizontal = Input.GetAxis("Horizontal");
-        Vertical = Input.GetAxis("Vertical");
+        if (IsEnabled)
+        {
+            Horizontal = Input.GetAxis("Horizontal");
+            Vertical = Input.GetAxis("Vertical");
 
-        IsCrouching = Input.GetKeyDown(KeyCode.C);
-        IsJumping = Input.GetButtonDown("Jump");
-        IsFiring = Input.GetButton("Fire1");
-        isSprinting = Input.GetKey(KeyCode.LeftShift);
+            IsCrouching = Input.GetKeyDown(KeyCode.C);
+            IsJumping = Input.GetButtonDown("Jump");
+            IsFiring = Input.GetButton("Fire1");
+            IsSprinting = Input.GetKey(KeyCode.LeftShift);
+        }
+        
     }
 }
