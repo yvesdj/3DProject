@@ -24,34 +24,33 @@ public class HighscoreTable : MonoBehaviour
         Highscores highscores = JsonUtility.FromJson<Highscores>(jsonString);
         if (highscores == null)
         {
-            _highscoreEntries = new List<HighscoreEntry>() {
-            new HighscoreEntry { score = 0 } };
-
-            highscores = new Highscores { highscoreEntries = _highscoreEntries };
-            string json = JsonUtility.ToJson(highscores);
-            PlayerPrefs.SetString("highscoreTable", json);
-            PlayerPrefs.Save();
+            highscores = CreateNewJsonList();
         }
 
-        ////RESET
-        //_highscoreEntries = new List<HighscoreEntry>() {
-        //new HighscoreEntry { score = 500 } };
-
-        //Highscores highscores = new Highscores { highscoreEntries = _highscoreEntries };
-        //string json = JsonUtility.ToJson(highscores);
-        //PlayerPrefs.SetString("highscoreTable", json);
-        //PlayerPrefs.Save();
-        ////RESET
-
-        //Highscores highscores = JsonUtility.FromJson<Highscores>(jsonString);
-
         SortHighscoreEntries(highscores);
+        PopulateHighscoresUI(highscores);
+    }
 
+    private void PopulateHighscoresUI(Highscores highscores)
+    {
         _highscoreTransforms = new List<Transform>();
         foreach (HighscoreEntry entry in highscores.highscoreEntries)
         {
             CreateHighscoreEntryTransform(entry, container, _highscoreTransforms);
         }
+    }
+
+    private Highscores CreateNewJsonList()
+    {
+        Highscores highscores;
+        _highscoreEntries = new List<HighscoreEntry>() {
+            new HighscoreEntry { score = 0 } };
+
+        highscores = new Highscores { highscoreEntries = _highscoreEntries };
+        string json = JsonUtility.ToJson(highscores);
+        PlayerPrefs.SetString("highscoreTable", json);
+        PlayerPrefs.Save();
+        return highscores;
     }
 
     public void ClearHighscores()
