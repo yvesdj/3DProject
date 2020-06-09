@@ -7,6 +7,7 @@ public class GameManager : MonoBehaviour
 {
     bool gameHasEnded = false;
     public float restartDelay = 1f;
+    public float victoryDelay = 2f;
     public GameObject victoryUI;
 
     public void EndGame()
@@ -24,6 +25,11 @@ public class GameManager : MonoBehaviour
     }
 
     public void WinGame()
+    {
+        Invoke("Victory", victoryDelay);
+    }
+
+    void Victory()
     {
         victoryUI.SetActive(true);
         Time.timeScale = 0f;
