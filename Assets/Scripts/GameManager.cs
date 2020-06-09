@@ -7,6 +7,7 @@ public class GameManager : MonoBehaviour
 {
     bool gameHasEnded = false;
     public float restartDelay = 1f;
+    public GameObject victoryUI;
 
     public void EndGame()
     {
@@ -24,15 +25,7 @@ public class GameManager : MonoBehaviour
 
     public void WinGame()
     {
-        if(gameHasEnded == false)
-        {
-            gameHasEnded = true;
-            Invoke("Victory", restartDelay);
-        }
-    }
-
-    void Victory()
-    {
-        SceneManager.LoadScene(4);
+        victoryUI.SetActive(true);
+        Time.timeScale = 0f;
     }
 }
