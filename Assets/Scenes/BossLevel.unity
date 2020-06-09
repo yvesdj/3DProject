@@ -5008,6 +5008,16 @@ PrefabInstance:
       propertyPath: animator
       value: 
       objectReference: {fileID: 405305441}
+    - target: {fileID: 1557117050044637626, guid: 7a47ec716de528643a77cbbf07aabd8e,
+        type: 3}
+      propertyPath: m_audioClip
+      value: 
+      objectReference: {fileID: 8300000, guid: 46b4b1d4c8200084d9d8e53fec7e2483, type: 3}
+    - target: {fileID: 1557117050044637626, guid: 7a47ec716de528643a77cbbf07aabd8e,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1557117050389229507, guid: 7a47ec716de528643a77cbbf07aabd8e,
         type: 3}
       propertyPath: m_IsActive

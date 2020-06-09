@@ -56564,6 +56564,16 @@ PrefabInstance:
       propertyPath: highscoreTable
       value: 
       objectReference: {fileID: 1385940924}
+    - target: {fileID: 7257106279042151880, guid: d4b91d40a14d3e045b58b03604898ed4,
+        type: 3}
+      propertyPath: m_audioClip
+      value: 
+      objectReference: {fileID: 8300000, guid: 7fa450a72f1a77d45b4f208479050572, type: 3}
+    - target: {fileID: 7257106279042151880, guid: d4b91d40a14d3e045b58b03604898ed4,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7257106280610937988, guid: d4b91d40a14d3e045b58b03604898ed4,
         type: 3}
       propertyPath: m_Name
