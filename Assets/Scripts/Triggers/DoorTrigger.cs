@@ -4,17 +4,13 @@ using UnityEngine;
 
 public class DoorTrigger : MonoBehaviour
 {
-    [SerializeField]
-    GameObject door;
-
-    public bool isOpened = false;
+    [SerializeField] private Animator animator;
 
     private void OnTriggerEnter(Collider col)
     {
-        if (!isOpened)
+        if (col.CompareTag("Player"))
         {
-            door.transform.position += new Vector3(0, -6, 0);
-            isOpened = true;
+            animator.SetBool("OpenDoor", true);
         }
     }
 }
