@@ -14,7 +14,7 @@ OcclusionCullingSettings:
 RenderSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 9
-  m_Fog: 1
+  m_Fog: 0
   m_FogColor: {r: 0, g: 0.25525114, b: 0.6226415, a: 1}
   m_FogMode: 3
   m_FogDensity: 0.2
@@ -343,6 +343,7 @@ MonoBehaviour:
     sentences:
     - This pill right here is a Power Up. Shoot at the enemies, I'm sure you'll enjoy
       it.
+    - 'If you feel comfortable with your new abilities, enter that big white gate. '
 --- !u!65 &57474147
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -41682,6 +41683,10 @@ MonoBehaviour:
     sentences:
     - Wel done! It seems the movement module is working fine.
     - Here's where the fun starts. You'll be programmed with a debugging tool shortly.
+    - I suggest you get some practice in, there are some programmes to debug in front
+      of you.
+    - And if you really want to go to town on them, you should check out what's on
+      your right!
 --- !u!65 &1180627892
 BoxCollider:
   m_ObjectHideFlags: 0

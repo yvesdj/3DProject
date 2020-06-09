@@ -23885,6 +23885,7 @@ GameObject:
   - component: {fileID: 1077753304}
   - component: {fileID: 1077753303}
   - component: {fileID: 1077753302}
+  - component: {fileID: 1077753306}
   m_Layer: 0
   m_Name: SpawnTrigger
   m_TagString: Untagged
@@ -23920,16 +23921,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   shootable: 0
   dialogue:
-    name: Ominous Voice
+    name: Optimus Prime
     sentences:
-    - This is where the Ominous voice will talk to you. You should probably listen
-      to him.
-    - If you want to make use of dialogs, begin with placing an object (Cube or wathever)
-      in the scene.
-    - Decide if you want this cube to be visible. You can toggle the mesh renderer
-      on or off to do this.
-    - Add the DialogueTrigger script as a component to the object, the rest explains
-      itself!
+    - Welcome young debugger. Here is where you'll start doing your job.
+    - 'Behind each gate are some programmes that need to be debugged. '
+    - Just watch yourself, because they're quite aggressive. You earn points by debugging
+      them, but it isn't necessary.
+    - Get to the end of each corridor and go through the white portal.
+    - If you've gone through all of them, a new portal will appear in this area.
+      Good luck.
 --- !u!65 &1077753303
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -23990,6 +23990,18 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1077753300}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &1077753306
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1077753300}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6a1914cb5ef06ca4d9218abe03cfab8a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1113090342
 PrefabInstance:
   m_ObjectHideFlags: 0
