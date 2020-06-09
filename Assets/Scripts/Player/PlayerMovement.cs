@@ -8,8 +8,8 @@ public class PlayerMovement : MonoBehaviour
     public CrouchHandler _crouchHandler;
     public CharacterController Controller { get; set; }
     public CollisionHandler CollisionHandler { get; set; }
-    
 
+    public Vector3 moveVector;
     public Vector3 currentVelocity;
     public float normalSpeed = 15f;
     public float sprintSpeed = 20f;
@@ -46,19 +46,31 @@ public class PlayerMovement : MonoBehaviour
     public void Movement()
     {
         float speed = normalSpeed;
-        Vector3 move = transform.right * _playerInput.Horizontal + transform.forward * _playerInput.Vertical;
+        
         currentVelocity = Controller.velocity;
         if (!_crouchHandler.IsCrouching)
         {
             speed = ChangeSpeed(speed);
         }
-        //speed = ChangeSpeed(speed);
-        Controller.Move(move * speed * Time.deltaTime);
+        MoveIfInputEnabled(speed);
+    }
+
+    private void MoveIfInputEnabled(float moveSpeed)
+    {
+        if (_playerInput.IsEnabled)
+        {
+            moveVector = transform.right * _playerInput.Horizontal + transform.forward * _playerInput.Vertical;
+        }
+        else
+        {
+            moveVector = new Vector3(0, 0, 0);
+        }
+        Controller.Move(moveVector * moveSpeed * Time.deltaTime);
     }
 
     private float ChangeSpeed(float speed)
     {
-        if (_playerInput.isSprinting)
+        if (_playerInput.IsSprinting)
         {
             speed = sprintSpeed;
         }

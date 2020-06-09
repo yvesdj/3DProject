@@ -442,7 +442,7 @@ Transform:
   - {fileID: 862471434}
   - {fileID: 57474145}
   m_Father: {fileID: 0}
-  m_RootOrder: 2
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!43 &66820238
 Mesh:
@@ -22621,7 +22621,7 @@ Transform:
   - {fileID: 905696249}
   - {fileID: 1793928232}
   m_Father: {fileID: 0}
-  m_RootOrder: 6
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &762429610
 GameObject:
@@ -40997,7 +40997,8 @@ GameObject:
   - component: {fileID: 1142560068}
   - component: {fileID: 1142560067}
   - component: {fileID: 1142560071}
-  m_Layer: 9
+  - component: {fileID: 1142560072}
+  m_Layer: 8
   m_Name: SpawnTrigger
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -41117,6 +41118,18 @@ MonoBehaviour:
   minimumFog: 0.01
   maximumFog: 1
   transitionSpeed: 0.05
+--- !u!114 &1142560072
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1142560065}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6a1914cb5ef06ca4d9218abe03cfab8a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1143062106
 GameObject:
   m_ObjectHideFlags: 0
@@ -41617,6 +41630,7 @@ GameObject:
   - component: {fileID: 1180627892}
   - component: {fileID: 1180627891}
   - component: {fileID: 1180627895}
+  - component: {fileID: 1180627896}
   m_Layer: 9
   m_Name: ShootingDialogue
   m_TagString: Untagged
@@ -41632,7 +41646,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1180627889}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 47.5, y: 12, z: -59.5}
+  m_LocalPosition: {x: 47.5, y: 12, z: -56.75}
   m_LocalScale: {x: 6, y: 1, z: 2.75}
   m_Children: []
   m_Father: {fileID: 65495278}
@@ -41667,8 +41681,8 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1, y: 7.150486, z: 1}
-  m_Center: {x: 0, y: 3.075243, z: 0}
+  m_Size: {x: 2.0677373, y: 7.150486, z: 1.8648148}
+  m_Center: {x: 0, y: 3.075243, z: 0.4324067}
 --- !u!23 &1180627893
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -41729,6 +41743,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   objectToToggle: {fileID: 120545264}
+--- !u!114 &1180627896
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1180627889}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6a1914cb5ef06ca4d9218abe03cfab8a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1185871476
 GameObject:
   m_ObjectHideFlags: 0
@@ -50195,6 +50221,7 @@ GameObject:
   - component: {fileID: 1363430481}
   - component: {fileID: 1363430480}
   - component: {fileID: 1363430484}
+  - component: {fileID: 1363430485}
   m_Layer: 9
   m_Name: DamageDialogue
   m_TagString: Untagged
@@ -50304,6 +50331,18 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: c7476e9b13544fc4aa921d2439a0077f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1363430485
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1363430478}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6a1914cb5ef06ca4d9218abe03cfab8a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!43 &1368946759
