@@ -13,7 +13,7 @@ public class DoorTrigger : MonoBehaviour
     {
         if (!isOpened)
         {
-            door.transform.position += new Vector3(0, -5, 0);
+            door.transform.position += new Vector3(0, -6, 0);
             isOpened = true;
         }
     }
