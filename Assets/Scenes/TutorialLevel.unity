@@ -51399,6 +51399,8 @@ MonoBehaviour:
     name: Optimus Prime
     sentences:
     - Great, you jumped onto something. They call me Optimus Prime, thanks for asking.
+    - Oh and you're able to move faster if you hold down the SHIFT button. Humans
+      call this sprinting I believe.
     - Keep following the markers. And try not to fall, I'm not in the mood to keep
       instantiating you again.
 --- !u!65 &1429832807
@@ -73252,12 +73254,12 @@ PrefabInstance:
     - target: {fileID: 1557117051680532734, guid: 7a47ec716de528643a77cbbf07aabd8e,
         type: 3}
       propertyPath: normalSpeed
-      value: 12.5
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 1557117051680532734, guid: 7a47ec716de528643a77cbbf07aabd8e,
         type: 3}
       propertyPath: sprintSpeed
-      value: 17.5
+      value: 15
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7a47ec716de528643a77cbbf07aabd8e, type: 3}
