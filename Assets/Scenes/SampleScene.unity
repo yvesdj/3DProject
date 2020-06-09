@@ -1291,7 +1291,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh-77120
+  m_Name: pb_Mesh227550
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -3218,6 +3218,11 @@ PrefabInstance:
         type: 3}
       propertyPath: maxEngageRange
       value: 50
+      objectReference: {fileID: 0}
+    - target: {fileID: 3093085409265106115, guid: 2eda5977d0b54e5489c46e173ff8dc16,
+        type: 3}
+      propertyPath: m_PlayOnAwake
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3093085409704391871, guid: 2eda5977d0b54e5489c46e173ff8dc16,
         type: 3}
@@ -5539,6 +5544,11 @@ PrefabInstance:
         type: 3}
       propertyPath: target
       value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 3093085409265106115, guid: 2eda5977d0b54e5489c46e173ff8dc16,
+        type: 3}
+      propertyPath: m_PlayOnAwake
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3093085409704391871, guid: 2eda5977d0b54e5489c46e173ff8dc16,
         type: 3}
@@ -9685,7 +9695,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh-77118
+  m_Name: pb_Mesh226990
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -23058,7 +23068,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh-77122
+  m_Name: pb_Mesh227078
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -25364,7 +25374,7 @@ AudioSource:
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 86d4ca63a5255134392a61fd79c6fb55, type: 3}
-  m_PlayOnAwake: 1
+  m_PlayOnAwake: 0
   m_Volume: 0.3
   m_Pitch: 1
   Loop: 0
@@ -55821,13 +55831,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1164230022}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0, y: 0, z: -19}
+  m_LocalPosition: {x: 0, y: 0, z: -19}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 552652533}
   - {fileID: 1878684251}
   m_Father: {fileID: 0}
-  m_RootOrder: 7
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!43 &1185362125
 Mesh:
@@ -81779,7 +81789,7 @@ PrefabInstance:
     - target: {fileID: 1557117051680532728, guid: 7a47ec716de528643a77cbbf07aabd8e,
         type: 3}
       propertyPath: m_RootOrder
-      value: 6
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 1557117051680532728, guid: 7a47ec716de528643a77cbbf07aabd8e,
         type: 3}
@@ -85989,6 +85999,11 @@ PrefabInstance:
       propertyPath: target
       value: 
       objectReference: {fileID: 0}
+    - target: {fileID: 3093085409265106115, guid: 2eda5977d0b54e5489c46e173ff8dc16,
+        type: 3}
+      propertyPath: m_PlayOnAwake
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3093085409704391871, guid: 2eda5977d0b54e5489c46e173ff8dc16,
         type: 3}
       propertyPath: m_Name
@@ -87019,7 +87034,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh321970
+  m_Name: pb_Mesh227236
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -90499,6 +90514,11 @@ PrefabInstance:
         type: 3}
       propertyPath: maxEngageRange
       value: 40
+      objectReference: {fileID: 0}
+    - target: {fileID: 3093085409265106115, guid: 2eda5977d0b54e5489c46e173ff8dc16,
+        type: 3}
+      propertyPath: m_PlayOnAwake
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3093085409704391871, guid: 2eda5977d0b54e5489c46e173ff8dc16,
         type: 3}
@@ -103160,6 +103180,11 @@ PrefabInstance:
       propertyPath: target
       value: 
       objectReference: {fileID: 0}
+    - target: {fileID: 3093085409265106115, guid: 2eda5977d0b54e5489c46e173ff8dc16,
+        type: 3}
+      propertyPath: m_PlayOnAwake
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3093085409704391871, guid: 2eda5977d0b54e5489c46e173ff8dc16,
         type: 3}
       propertyPath: m_Name
@@ -109297,6 +109322,11 @@ PrefabInstance:
       propertyPath: fireRate
       value: 0.3
       objectReference: {fileID: 0}
+    - target: {fileID: 1506642555868028519, guid: 92e8bd188de4a3b41b9edaf54aa97571,
+        type: 3}
+      propertyPath: m_PlayOnAwake
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1506642556238714600, guid: 92e8bd188de4a3b41b9edaf54aa97571,
         type: 3}
       propertyPath: target
@@ -109438,6 +109468,11 @@ PrefabInstance:
         type: 3}
       propertyPath: target
       value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 3093085409265106115, guid: 2eda5977d0b54e5489c46e173ff8dc16,
+        type: 3}
+      propertyPath: m_PlayOnAwake
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3093085409704391871, guid: 2eda5977d0b54e5489c46e173ff8dc16,
         type: 3}
