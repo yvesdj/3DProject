@@ -311,7 +311,7 @@ GameObject:
   - component: {fileID: 422769509287029117}
   - component: {fileID: 422769509287029116}
   - component: {fileID: 422769509287029119}
-  - component: {fileID: 422769509287029118}
+  - component: {fileID: 8736976659576312744}
   m_Layer: 8
   m_Name: BigBoss
   m_TagString: Untagged
@@ -366,7 +366,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxHealth: 1500
   scoreAmount: 10000
---- !u!114 &422769509287029118
+--- !u!114 &8736976659576312744
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -375,10 +375,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 422769509287029114}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1dfbb45d9cfae0b49973f42e131e3791, type: 3}
+  m_Script: {fileID: 11500000, guid: 154691f4d4f34f94eb23adf54a8d6a2c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  healthBar: {fileID: 422769508961258291}
+  healthBar: {fileID: 0}
   enemy: {fileID: 0}
 --- !u!1 &5993053621138381312
 GameObject:
@@ -5874,15 +5874,3 @@ RectTransform:
     type: 3}
   m_PrefabInstance: {fileID: 422769508955964415}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &422769508961258291 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 11487436, guid: 60da1df1f7edb3747bea8f735b2768d1,
-    type: 3}
-  m_PrefabInstance: {fileID: 422769508955964415}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1310e65397a274d44a776b51d6937f61, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
