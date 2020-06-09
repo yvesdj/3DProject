@@ -5232,6 +5232,16 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1557117051680532734, guid: 7a47ec716de528643a77cbbf07aabd8e,
+        type: 3}
+      propertyPath: normalSpeed
+      value: 12.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 1557117051680532734, guid: 7a47ec716de528643a77cbbf07aabd8e,
+        type: 3}
+      propertyPath: sprintSpeed
+      value: 17.5
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7a47ec716de528643a77cbbf07aabd8e, type: 3}
 --- !u!43 &624048061
@@ -8526,6 +8536,7 @@ GameObject:
   - component: {fileID: 1072211681}
   - component: {fileID: 1072211683}
   - component: {fileID: 1072211682}
+  - component: {fileID: 1072211684}
   m_Layer: 8
   m_Name: GameComplete
   m_TagString: Untagged
@@ -8592,6 +8603,20 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1072211680}
   m_CullTransparentMesh: 0
+--- !u!114 &1072211684
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1072211680}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b62d18214accb96429d8157cdedfe979, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  scoreTotal: {fileID: 735178885}
+  player: {fileID: 0}
 --- !u!1 &1095756272
 GameObject:
   m_ObjectHideFlags: 0

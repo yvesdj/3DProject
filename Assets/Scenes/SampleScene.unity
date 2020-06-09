@@ -56597,6 +56597,16 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7257106280610937996, guid: d4b91d40a14d3e045b58b03604898ed4,
+        type: 3}
+      propertyPath: normalSpeed
+      value: 12.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 7257106280610937996, guid: d4b91d40a14d3e045b58b03604898ed4,
+        type: 3}
+      propertyPath: sprintSpeed
+      value: 17.5
+      objectReference: {fileID: 0}
     - target: {fileID: 8745696448731280279, guid: d4b91d40a14d3e045b58b03604898ed4,
         type: 3}
       propertyPath: scoreTotal
