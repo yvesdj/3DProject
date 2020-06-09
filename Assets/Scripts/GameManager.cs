@@ -32,6 +32,8 @@ public class GameManager : MonoBehaviour
     void Victory()
     {
         victoryUI.SetActive(true);
+        PauseMenu.gameIsPaused = true;
         Time.timeScale = 0f;
+        
     }
 }
