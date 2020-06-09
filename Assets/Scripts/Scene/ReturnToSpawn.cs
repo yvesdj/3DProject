@@ -5,8 +5,13 @@ using UnityEngine;
 
 public class ReturnToSpawn : MonoBehaviour
 {
-    public Player player;
+    public GameObject player;
     public Transform respawnPoint;
+
+    private void Awake()
+    {
+        player = GameObject.FindGameObjectWithTag("Player");
+    }
 
     public void OnTriggerEnter(Collider other)
     {
