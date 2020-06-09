@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using Assets.Scripts.UI;
+using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
@@ -31,7 +32,7 @@ public class HighscoreTable : MonoBehaviour
         }
     }
 
-    private void AddHighscoreEntry(float score)
+    public void AddHighscoreEntry(float score)
     {
         //Create
         HighscoreEntry highscoreEntry = new HighscoreEntry { score = score };
@@ -83,14 +84,14 @@ public class HighscoreTable : MonoBehaviour
         transforms.Add(entryTransform);
     }
 
-    private class Highscores
-    {
-        public List<HighscoreEntry> highscoreEntries;
-    }
+    //private class Highscores
+    //{
+    //    public List<HighscoreEntry> highscoreEntries;
+    //}
 
-    [System.Serializable]
-    private class HighscoreEntry
-    {
-        public float score;
-    }
+    //[System.Serializable]
+    //private class HighscoreEntry
+    //{
+    //    public float score;
+    //}
 }
