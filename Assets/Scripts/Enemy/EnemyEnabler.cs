@@ -24,20 +24,16 @@ public class EnemyEnabler : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        CheckTriggers();
+    }
 
-        if (eventTrigger.HasBeenTriggered == true)
+    private void CheckTriggers()
+    {
+        if (eventTrigger.HasBeenTriggered && !HasBeenTriggered)
         {
-            _gunHandler.isActive = true;
             HasBeenTriggered = true;
-            
-        }
-
-        if (HasBeenTriggered)
-        {
-            
+            _gunHandler.isActive = true;
             StartCoroutine(DeactivateEnemyAfterTime());
-            HasBeenTriggered = false;
         }
     }
 
@@ -45,7 +41,7 @@ public class EnemyEnabler : MonoBehaviour
     {
         
         yield return new WaitForSeconds(duration);
-        eventTrigger.HasBeenTriggered = false;
+        
         _gunHandler.isActive = false;
         
         Debug.Log("Disable");

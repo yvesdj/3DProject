@@ -29,8 +29,6 @@ public class ToggleInputLock : MonoBehaviour, IEventTrigger
     public void OnTriggerEnter(Collider other)
     {
         HasBeenTriggered = true;
-        player.GetComponent<PlayerMovement>().moveVector = new Vector3(0, 0, 0);
         player.GetComponent<PlayerInput>().IsEnabled = false;
-        Debug.Log(player.GetComponent<PlayerMovement>().moveVector);
     }
 }
