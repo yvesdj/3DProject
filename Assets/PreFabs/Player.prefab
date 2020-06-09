@@ -135,12 +135,12 @@ MonoBehaviour:
     m_Bits: 791
   stopNaNPropagation: 1
   finalBlitToCameraTarget: 0
-  antialiasingMode: 0
+  antialiasingMode: 3
   temporalAntialiasing:
     jitterSpread: 0.75
     sharpness: 0.25
     stationaryBlending: 0.95
-    motionBlending: 0.85
+    motionBlending: 0.31
   subpixelMorphologicalAntialiasing:
     quality: 2
   fastApproximateAntialiasing:
@@ -5211,7 +5211,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &1557117050389229506
 Transform:
   m_ObjectHideFlags: 0
@@ -5628,7 +5628,7 @@ Transform:
   m_GameObject: {fileID: 1557117051680532726}
   m_LocalRotation: {x: -0, y: -1, z: -0, w: 0.00000020861623}
   m_LocalPosition: {x: 16, y: 6, z: -10}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.5, y: 0.5, z: 0.5}
   m_Children:
   - {fileID: 1557117050044637620}
   - {fileID: 1557117050934427441}
@@ -5743,6 +5743,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _playerInput: {fileID: 0}
   _crouchHandler: {fileID: 0}
+  moveVector: {x: 0, y: 0, z: 0}
   currentVelocity: {x: 0, y: 0, z: 0}
   normalSpeed: 15
   sprintSpeed: 20
