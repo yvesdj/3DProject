@@ -52,6 +52,11 @@ public class PauseMenu : MonoBehaviour
         highscoreUI.SetActive(true);
         pauseMenuUI.SetActive(false);
     }
+    public void QuitGame()
+    {
+        Debug.Log("Quit");
+        Application.Quit();
+    }
 
     public void Return()
     {
