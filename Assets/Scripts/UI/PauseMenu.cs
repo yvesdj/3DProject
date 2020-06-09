@@ -9,6 +9,7 @@ public class PauseMenu : MonoBehaviour
     public static bool gameIsPaused = false;
 
     public GameObject pauseMenuUI;
+    public GameObject highscoreUI;
 
     // Update is called once per frame
     void Update()
@@ -46,5 +47,15 @@ public class PauseMenu : MonoBehaviour
         Time.timeScale = 1f;
     }
 
+    public void ShowHighscore()
+    {
+        highscoreUI.SetActive(true);
+        pauseMenuUI.SetActive(false);
+    }
 
+    public void Return()
+    {
+        highscoreUI.SetActive(false);
+        pauseMenuUI.SetActive(true);
+    }
 }

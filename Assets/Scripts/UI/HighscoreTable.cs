@@ -22,6 +22,28 @@ public class HighscoreTable : MonoBehaviour
 
         string jsonString = PlayerPrefs.GetString("highscoreTable");
         Highscores highscores = JsonUtility.FromJson<Highscores>(jsonString);
+        if (highscores == null)
+        {
+            _highscoreEntries = new List<HighscoreEntry>() {
+            new HighscoreEntry { score = 0 } };
+
+            highscores = new Highscores { highscoreEntries = _highscoreEntries };
+            string json = JsonUtility.ToJson(highscores);
+            PlayerPrefs.SetString("highscoreTable", json);
+            PlayerPrefs.Save();
+        }
+
+        ////RESET
+        //_highscoreEntries = new List<HighscoreEntry>() {
+        //new HighscoreEntry { score = 500 } };
+
+        //Highscores highscores = new Highscores { highscoreEntries = _highscoreEntries };
+        //string json = JsonUtility.ToJson(highscores);
+        //PlayerPrefs.SetString("highscoreTable", json);
+        //PlayerPrefs.Save();
+        ////RESET
+
+        //Highscores highscores = JsonUtility.FromJson<Highscores>(jsonString);
 
         SortHighscoreEntries(highscores);
 
@@ -30,6 +52,11 @@ public class HighscoreTable : MonoBehaviour
         {
             CreateHighscoreEntryTransform(entry, container, _highscoreTransforms);
         }
+    }
+
+    public void ClearHighscores()
+    {
+        PlayerPrefs.DeleteKey("highscoreTable");
     }
 
     public void AddHighscoreEntry(float score)
@@ -83,15 +110,4 @@ public class HighscoreTable : MonoBehaviour
 
         transforms.Add(entryTransform);
     }
-
-    //private class Highscores
-    //{
-    //    public List<HighscoreEntry> highscoreEntries;
-    //}
-
-    //[System.Serializable]
-    //private class HighscoreEntry
-    //{
-    //    public float score;
-    //}
 }

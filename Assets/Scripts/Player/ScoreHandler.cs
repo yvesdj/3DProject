@@ -24,7 +24,7 @@ public class ScoreHandler : MonoBehaviour
         scoreAdded.text = "+" + amount.ToString();
         UpdateTotalScore();
         StartCoroutine(FadeScoreAdded());
-        Debug.Log("Score: " + score);
+        
     }
 
     public void UpdateTotalScore()

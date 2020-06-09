@@ -43,9 +43,5 @@ public class EnemyEnabler : MonoBehaviour
         yield return new WaitForSeconds(duration);
         
         _gunHandler.isActive = false;
-        
-        Debug.Log("Disable");
-
-        Debug.Log("Enemy Active: " + _gunHandler.isActive);
     }
 }
