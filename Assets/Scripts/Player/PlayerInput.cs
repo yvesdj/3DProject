@@ -14,6 +14,10 @@ public class PlayerInput : MonoBehaviour
     public bool IsFiring { get; set; }
     public bool IsSprinting { get; set; }
 
+    private void Awake()
+    {
+        IsEnabled = true;
+    }
     // Update is called once per frame
     void Update()
     {
