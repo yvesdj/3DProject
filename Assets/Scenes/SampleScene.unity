@@ -4316,7 +4316,6 @@ GameObject:
   - component: {fileID: 530753386}
   - component: {fileID: 530753385}
   - component: {fileID: 530753384}
-  - component: {fileID: 530753387}
   - component: {fileID: 530753388}
   m_Layer: 0
   m_Name: StarterEndTrigger
@@ -4399,20 +4398,6 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 530753382}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
---- !u!114 &530753387
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 530753382}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a4df8b33b313aea4c9503c1d06f7f86f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  player: {fileID: 0}
-  respawnPoint: {fileID: 1494015965}
 --- !u!114 &530753388
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4426,6 +4411,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ending: {fileID: 716237058}
+  respawnPoint: {fileID: 1494015965}
   portalActivated: 0
 --- !u!1 &533826751
 GameObject:
@@ -4439,7 +4425,6 @@ GameObject:
   - component: {fileID: 533826755}
   - component: {fileID: 533826754}
   - component: {fileID: 533826753}
-  - component: {fileID: 533826756}
   - component: {fileID: 533826757}
   m_Layer: 0
   m_Name: HallwayEndTrigger
@@ -4522,20 +4507,6 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 533826751}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
---- !u!114 &533826756
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 533826751}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a4df8b33b313aea4c9503c1d06f7f86f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  player: {fileID: 0}
-  respawnPoint: {fileID: 1494015965}
 --- !u!114 &533826757
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4549,6 +4520,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ending: {fileID: 716237058}
+  respawnPoint: {fileID: 1494015965}
   portalActivated: 0
 --- !u!1001 &538577134
 PrefabInstance:
@@ -9510,6 +9482,25 @@ Mesh:
     offset: 0
     size: 0
     path: 
+--- !u!1 &976295492 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3638595558192662709, guid: 94c80a690d968504ba45cde80501f617,
+    type: 3}
+  m_PrefabInstance: {fileID: 3638595556943955722}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &976295493
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 976295492}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0812ab15ac6bc874f9555b11ae04c5a3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  restartDelay: 1
 --- !u!1001 &978186467
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -87282,7 +87273,6 @@ GameObject:
   - component: {fileID: 1590787607}
   - component: {fileID: 1590787606}
   - component: {fileID: 1590787605}
-  - component: {fileID: 1590787608}
   - component: {fileID: 1590787609}
   m_Layer: 0
   m_Name: OpenLvlTrigger
@@ -87365,20 +87355,6 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1590787603}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
---- !u!114 &1590787608
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1590787603}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a4df8b33b313aea4c9503c1d06f7f86f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  player: {fileID: 0}
-  respawnPoint: {fileID: 1494015965}
 --- !u!114 &1590787609
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -87392,6 +87368,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ending: {fileID: 716237058}
+  respawnPoint: {fileID: 1494015965}
   portalActivated: 0
 --- !u!1001 &1595953770
 PrefabInstance:
@@ -87912,7 +87889,6 @@ GameObject:
   - component: {fileID: 1696640589}
   - component: {fileID: 1696640588}
   - component: {fileID: 1696640587}
-  - component: {fileID: 1696640590}
   - component: {fileID: 1696640591}
   m_Layer: 0
   m_Name: ZigZagEndTrigger
@@ -87995,20 +87971,6 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1696640585}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
---- !u!114 &1696640590
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1696640585}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a4df8b33b313aea4c9503c1d06f7f86f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  player: {fileID: 0}
-  respawnPoint: {fileID: 1494015965}
 --- !u!114 &1696640591
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -88022,6 +87984,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ending: {fileID: 716237058}
+  respawnPoint: {fileID: 1494015965}
   portalActivated: 0
 --- !u!43 &1705029666
 Mesh:

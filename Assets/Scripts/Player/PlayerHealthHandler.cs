@@ -39,10 +39,11 @@ public class PlayerHealthHandler : MonoBehaviour, IHealthHandler
     }
 
     private void Die()
-    {
+    { 
         soundEffectPicker.PlayRandomDie();
-        player.transform.position = respawnPoint.transform.position;
-        ResetHealth();
+        FindObjectOfType<GameManager>().EndGame();
+        //player.transform.position = respawnPoint.transform.position;
+        //ResetHealth();
     }
 
     public void ResetHealth()
