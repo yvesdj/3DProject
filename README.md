@@ -5,7 +5,7 @@ The game's style is heavily inspired by TRON.
 
 ## Features
 
-
+### Levels
 It consists of 3 basic levels: 
 * Tutorial Level
     
