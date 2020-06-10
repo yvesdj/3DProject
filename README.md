@@ -43,4 +43,4 @@ It consists of 3 basic levels:
 - Music: 
    * Main Menu and tutorial level: Mr. Sosa - Voyager
    * Main Level: Deme - GG
-   * Boss Level: New Order - Blue Monay (Instrumental)
+   * Boss Level: New Order - Blue Monday (Instrumental)
