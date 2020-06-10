@@ -1,9 +1,9 @@
-# 3DProject: BosonForce
+# 3DProject
 disgame
 
 ## Contributions 
 ### Arne:
-- Level design SampleScene en BossLevel using ProBuilder
+- Level design SampleScene and BossLevel using ProBuilder
 - Enemy & pick-up placement
 - Door Animations
 - Dialogue implementation in BossLevel
