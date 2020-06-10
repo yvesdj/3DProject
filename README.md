@@ -11,7 +11,17 @@ It consists of 3 basic levels:
 * Tutorial Level
     * 
     * Getting familiar with the movement
-    * Getting familiar with 
+    * Getting familiar with enemies
+    * Getting familiar with pick-ups
+    
+* Main Level
+    *
+    * Four different hallways each with a different layout
+    * Introduction to a new enemy type
+    
+* Boss Level
+    *
+    * A rising path around the boss to end at the top for an epic battle
 
 ## Contributions 
 ### Arne:
