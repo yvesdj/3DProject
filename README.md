@@ -2,7 +2,7 @@
 disgame
 
 ## Introduction
-BosonForce is a simple **FPS** game made by Yve's De Jonghe en Arne Janssens, 2 students of AP. 
+BosonForce is a simple **FPS** game made by Yve's De Jonghe and Arne Janssens, 2 students of AP. 
 The game's style is heavily inspired by TRON. 
 
 ###### Features
