@@ -3,7 +3,7 @@
 **BosonForce** is a simple **FPS** game made by Yve's De Jonghe and Arne Janssens, 2 students of AP. 
 The game's style is heavily inspired by TRON. 
 
-###### Features
+## Features
 
 
 It consists of 3 basic levels: 
@@ -34,6 +34,7 @@ It consists of 3 basic levels:
 
 ### Yve's:
 - Level design Tutorial using ProBuilder
+- Simple Materials
 - Player scripting
 - Player HUD
 - Gun scripting
@@ -45,7 +46,7 @@ It consists of 3 basic levels:
 - Big laser soundfile: Zapsplat.com
 - Weapon skins: DevAssets
 - Gun sound files: Soundbible.com
-- Player sounds: 
+- Player sounds: Jasser Gueddar
 - Music: 
    * Main Menu and tutorial level: Mr. Sosa - Voyager
    * Main Level: Deme - GG
