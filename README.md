@@ -1,8 +1,6 @@
-# 3DProject
-disgame
-
+# 3DProject: BosonForce
 ## Introduction
-BosonForce is a simple **FPS** game made by Yve's De Jonghe and Arne Janssens, 2 students of AP. 
+**BosonForce** is a simple **FPS** game made by Yve's De Jonghe and Arne Janssens, 2 students of AP. 
 The game's style is heavily inspired by TRON. 
 
 ###### Features
@@ -34,6 +32,14 @@ It consists of 3 basic levels:
 - Victoryscreen BossLevel
 - Sniper & BossEnemy (created from enemy prefab)
 
+### Yve's:
+- Level design Tutorial using ProBuilder
+- Player scripting
+- Player HUD
+- Gun scripting
+- Enemy AI
+- Dialogue Manager
+- Sound design and scripting
 
 ## Credits
 - Big laser soundfile: Zapsplat.com
